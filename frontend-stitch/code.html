@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InaraX | B2B AI Training for Teams</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#0050ef",
+                        "on-surface-variant": "#434656",
+                        "surface-variant": "#e1e1ee",
+                        "surface-container-low": "#f3f2ff",
+                        "primary-fixed": "#dce1ff",
+                        "inverse-surface": "#2e303a",
+                        "on-primary-fixed": "#001550",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9d9e6",
+                        "on-primary-container": "#d5dbff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#b53001",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-tertiary-container": "#ffd3c7",
+                        "surface-tint": "#004ee9",
+                        "on-surface": "#191b24",
+                        "primary": "#003cb9",
+                        "inverse-primary": "#b6c4ff",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "outline-variant": "#c3c5d8",
+                        "surface-bright": "#faf8ff",
+                        "on-tertiary-fixed": "#3b0900",
+                        "background": "#faf8ff",
+                        "surface-container-high": "#e7e7f4",
+                        "inverse-on-surface": "#f0f0fd",
+                        "on-error": "#ffffff",
+                        "surface-container": "#ededfa",
+                        "secondary-container": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "outline": "#737687",
+                        "on-secondary": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-tertiary-fixed-variant": "#872100",
+                        "tertiary": "#8b2200",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-background": "#191b24",
+                        "error": "#ba1a1a",
+                        "secondary": "#5f5e5e",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e1ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Open Sans"],
+                        "body-lg": ["Open Sans"],
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Open Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(19, 19, 19, 0.05);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-item.active .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed-dim">
+<!-- Navbar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-on-surface/5 shadow-sm">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">InaraX</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Pricing</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Solutions</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors font-body-md">Log in</button>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full font-bold transition-transform active:scale-95">Sign up</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-24 bg-[#FFFBF0]">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="fade-up">
+<span class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-label-caps text-label-caps mb-6 uppercase tracking-wider">For organizations</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">AI training for your team, personalized to every role</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">Your organization subscribes to inaraX, and we build a course for your people. Personalized to each role and seniority. Employees learn in the app while your admins track progress, completion, and quiz scores from a single dashboard.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-inverse-surface text-on-primary px-8 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:shadow-lg active:scale-95">Request a consultation</button>
+</div>
+</div>
+<div class="relative fade-up delay-200">
+<div class="glass-card p-4 rounded-full aspect-square flex items-center justify-center relative z-10 overflow-hidden">
+<img alt="A clean, professional 3D rendering of a futuristic learning interface showing diverse team members connecting via digital nodes." class="w-full h-full object-cover rounded-full shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyF_-7GGOVIUPtgQdYByVdICxiJnePk4kFcXpH9HhJnhmKohoAKHLHmXHBusICXXsOfAY8aR_OzGY628QxZq1eyWrJh2fRmwVtx5pGogOfa8sTSgOF99beBAxiQQJc_k8wVLTZrtVigzzQueIE54tQMU2TG4WuIBhNTbY-fMqdiFHRs1ZVR1vZ9CsDY1PhfhDBbNO8m0QMtO3rgs6Opr3419G87tBwmOccwyoaB8kAi51lNaAYcN3XoisaouT3bh6RtL_ol2h9aZg"/>
+</div>
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Why Generic Training Fails -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="fade-up">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">Generic training is expensive — and it doesn't stick.</h2>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
+<p>Most corporate training hands everyone the same course and hopes it lands. It ignores what people already know and what their role actually needs, so budgets get spent and skills don't move.</p>
+<p>We've solved this by moving away from 'one-size-fits-all' modules toward context-aware learning paths.</p>
+</div>
+</div>
+<div class="fade-up delay-150">
+<div class="bg-[#ECF7ED] p-10 rounded-3xl border border-[#C6E7C8]">
+<span class="material-symbols-outlined text-4xl text-[#2E7D32] mb-6">psychology</span>
+<p class="font-body-lg text-body-lg text-[#1B5E20] leading-relaxed">
+                                AI for a bank teller ≠ AI for the C-suite. A risk officer and an investment banker need different things again. inaraX personalizes one subscription for every role and level, so each person learns what's relevant to them.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- One Subscription, Three Moving Parts -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16 fade-up">
+<h2 class="font-headline-md text-headline-md mb-4">One Subscription, Three Moving Parts</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your subscription and dashboard on one side, inaraX in the middle, and the people who run the program and take the course on the other.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Org dashboard -->
+<div class="glass-card p-8 rounded-2xl fade-up delay-100 flex flex-col h-full">
+<h3 class="font-headline-sm text-headline-sm mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+                            Org dashboard
+                        </h3>
+<div class="space-y-4 mt-auto">
+<div class="flex justify-between items-center p-4 bg-surface rounded-xl border border-outline-variant/10">
+<span class="text-on-surface-variant">Seats Allocated</span>
+<span class="font-bold text-primary">2,500</span>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface rounded-xl border border-outline-variant/10">
+<span class="text-on-surface-variant">In course</span>
+<span class="font-bold text-primary">84%</span>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface rounded-xl border border-outline-variant/10">
+<span class="text-on-surface-variant">Lessons completed</span>
+<span class="font-bold text-primary">12,402</span>
+</div>
+</div>
+</div>
+<!-- Platform -->
+<div class="glass-card p-8 rounded-2xl fade-up delay-200 flex flex-col items-center justify-center bg-primary text-on-primary">
+<div class="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center mb-6">
+<span class="font-bold text-xl">InaraX</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-center mb-4">Central Intelligence</h3>
+<p class="text-center text-white/80 font-body-sm">The node that connects your organizational goals to personalized individual learning paths.</p>
+</div>
+<!-- Roles -->
+<div class="glass-card p-8 rounded-2xl fade-up delay-300 flex flex-col h-full">
+<h3 class="font-headline-sm text-headline-sm mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+                            Roles
+                        </h3>
+<div class="space-y-4 mt-auto">
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/10 flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-semibold">Program owner</span>
+</div>
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/10 flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-primary/60"></div>
+<span class="font-semibold">L&amp;D / Partner</span>
+</div>
+<div class="p-4 bg-surface rounded-xl border border-outline-variant/10 flex items-center gap-4">
+<div class="w-2 h-2 rounded-full bg-primary/30"></div>
+<span class="font-semibold">Learner</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center fade-up">How it works</h2>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- Step 1 -->
+<div class="accordion-item glass-card rounded-2xl overflow-hidden fade-up">
+<button class="w-full flex items-center justify-between p-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+<div>
+<span class="font-label-caps text-primary mb-2 block">STEP 01</span>
+<h3 class="font-headline-sm text-headline-sm">1. Subscribe</h3>
+<p class="text-on-surface-variant mt-1">Commercial scope: seats, term, and success measures.</p>
+</div>
+</div>
+<span class="material-symbols-outlined chevron transition-transform text-primary text-3xl">expand_more</span>
+</button>
+<div class="accordion-content bg-white/50 px-8">
+<div class="py-6 ml-12 border-t border-outline-variant/10 text-on-surface-variant">
+                                We align with your procurement and strategic goals. Whether you need to upskill 50 managers or 5,000 frontline staff, we define the roadmap together for maximum ROI.
+                            </div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="accordion-item glass-card rounded-2xl overflow-hidden fade-up delay-100">
+<button class="w-full flex items-center justify-between p-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+<div>
+<span class="font-label-caps text-primary mb-2 block">STEP 02</span>
+<h3 class="font-headline-sm text-headline-sm">2. Course</h3>
+<p class="text-on-surface-variant mt-1">We build the course with your subscription funds, personalized for every user.</p>
+</div>
+</div>
+<span class="material-symbols-outlined chevron transition-transform text-primary text-3xl">expand_more</span>
+</button>
+<div class="accordion-content bg-white/50 px-8">
+<div class="py-6 ml-12 border-t border-outline-variant/10 text-on-surface-variant">
+                                Our AI engine generates specialized curriculum chunks based on role profiles. A software engineer learns AI coding paradigms while a HR lead learns AI policy and bias mitigation.
+                            </div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="accordion-item glass-card rounded-2xl overflow-hidden fade-up delay-200">
+<button class="w-full flex items-center justify-between p-8 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+<div>
+<span class="font-label-caps text-primary mb-2 block">STEP 03</span>
+<h3 class="font-headline-sm text-headline-sm">3. Monitor</h3>
+<p class="text-on-surface-variant mt-1">One dashboard: progress, completion, and quiz data.</p>
+</div>
+</div>
+<span class="material-symbols-outlined chevron transition-transform text-primary text-3xl">expand_more</span>
+</button>
+<div class="accordion-content bg-white/50 px-8">
+<div class="py-6 ml-12 border-t border-outline-variant/10 text-on-surface-variant">
+                                Real-time analytics for admins. Identify high-potential talent, monitor engagement across departments, and ensure compliance benchmarks are met through automated reporting.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Partner with inaraX -->
+<section class="py-24 bg-surface-container-high">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Procurement -->
+<div class="glass-card p-8 rounded-3xl fade-up">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Procurement</h3>
+<p class="text-on-surface-variant text-body-sm">Streamlined contracting with fixed per-seat pricing. No hidden costs for customization—it's built into the subscription model from day one.</p>
+</div>
+<!-- L&D -->
+<div class="glass-card p-8 rounded-3xl fade-up delay-100">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">L&amp;D Professionals</h3>
+<p class="text-on-surface-variant text-body-sm">Stop spending months designing content. Our AI does the heavy lifting, allowing you to focus on strategy and culture instead of asset production.</p>
+</div>
+<!-- Leadership -->
+<div class="glass-card p-8 rounded-3xl fade-up delay-200">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">leaderboard</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Leadership</h3>
+<p class="text-on-surface-variant text-body-sm">Ensure your entire organization speaks the same language about AI while having the specialized skills to actually deploy it within their silos.</p>
+</div>
+<!-- End Learner -->
+<div class="glass-card p-8 rounded-3xl fade-up delay-300">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">End Learner</h3>
+<p class="text-on-surface-variant text-body-sm">Content that finally matters. Employees get the tools they need to be 10x more productive in their specific jobs, not just a generic overview.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Enterprise-Ready -->
+<section class="py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center fade-up">Built for how organizations work</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+<div class="flex flex-col items-center text-center p-8 glass-card rounded-2xl fade-up">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">key</span>
+<h4 class="font-bold text-on-surface mb-2">Single sign-on (SSO)</h4>
+<p class="text-on-surface-variant text-body-sm">Integrate with your existing identity providers for seamless access.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 glass-card rounded-2xl fade-up delay-100">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">admin_panel_settings</span>
+<h4 class="font-bold text-on-surface mb-2">Admin controls</h4>
+<p class="text-on-surface-variant text-body-sm">Granular permissions and dashboard tools to manage your team effectively.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 glass-card rounded-2xl fade-up delay-200">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">verified</span>
+<h4 class="font-bold text-on-surface mb-2">Expert-reviewed content</h4>
+<p class="text-on-surface-variant text-body-sm">All AI-generated paths are vetted by human experts for accuracy.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 glass-card rounded-2xl fade-up delay-300">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">security</span>
+<h4 class="font-bold text-on-surface mb-2">Your data stays yours</h4>
+<p class="text-on-surface-variant text-body-sm">Strict data isolation and enterprise-grade security protocols.</p>
+</div>
+<div class="flex flex-col items-center text-center p-8 glass-card rounded-2xl fade-up delay-400">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">handshake</span>
+<h4 class="font-bold text-on-surface mb-2">Backed by Atomcamp Arabia</h4>
+<p class="text-on-surface-variant text-body-sm">Leveraging world-class educational expertise and infrastructure.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-3xl mx-auto px-margin-desktop">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center fade-up">Questions we hear often</h2>
+<div class="space-y-4">
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">How long does it take to set up?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">Typically, we can have your personalized dashboard and first set of courses ready within 10-14 business days.</div>
+</div>
+</div>
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">Can we upload our own proprietary data?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">Yes. We provide secure sandboxed environments where you can include company-specific documents to train the models for your team's unique context.</div>
+</div>
+</div>
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">What is the minimum number of seats?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">Our B2B program starts at 50 seats. For smaller teams, we recommend our standard team subscriptions.</div>
+</div>
+</div>
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">Are the courses certified?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">Yes, learners receive industry-recognized certifications upon completion, co-branded with InaraX and Atomcamp Arabia.</div>
+</div>
+</div>
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">Do you offer on-site workshops?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">While we are digital-first, we do offer hybrid packages that include high-impact on-site workshops for senior leadership.</div>
+</div>
+</div>
+<div class="accordion-item bg-white rounded-xl shadow-sm border border-outline-variant/10">
+<button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-surface">Is there a mobile app?</span>
+<span class="material-symbols-outlined chevron transition-transform">expand_more</span>
+</button>
+<div class="accordion-content px-6">
+<div class="pb-6 text-on-surface-variant">Yes, the InaraX platform is fully responsive and available as a native app for iOS and Android.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-inverse-surface text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 fade-up">Let's talk</h2>
+<p class="font-body-lg text-body-lg mb-10 text-white/70 max-w-2xl mx-auto fade-up delay-100">Tell us your organization, a rough seat count, and the skills or outcomes you need the course to support. We'll map a subscription and delivery plan to match.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 fade-up delay-200">
+<button class="w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95">Request a consultation</button>
+<button class="w-full sm:w-auto border border-white/20 text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-all active:scale-95">Browse courses</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface border-t border-outline-variant/10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-inverse-on-surface mb-4">InaraX</div>
+<p class="text-on-surface-variant text-body-sm max-w-xs mb-4">Adaptive learning for individuals &amp; teams.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">Product</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Courses</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Enterprise</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Security</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">Contact</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Contact Sales</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm" href="#">Blog</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-body-sm">© 2024 InaraX AI. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-white cursor-pointer">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-white cursor-pointer">hub</span>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordions in the same container if desired
+            // item.parentElement.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body></html>
