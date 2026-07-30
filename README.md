@@ -44,7 +44,7 @@ inarax-new/
 │   ├── layout.tsx                # Root layout: fonts, metadata, <html>/<body>
 │   ├── globals.css               # Tailwind import, @theme design tokens, custom CSS
 │   ├── favicon.ico
-│   └── (marketing)/               # Route group — shared Navbar + Footer layout
+│   └── (main)/               # Route group — shared Navbar + Footer layout
 │       ├── layout.tsx              # Renders <Navbar/> + <main> + <Footer/> around every page below
 │       ├── page.tsx                 # "/" — composes the homepage sections
 │       ├── courses/page.tsx         # "/courses" — placeholder page
@@ -78,14 +78,14 @@ inarax-new/
 
 ## How the homepage fits together
 
-`app/(marketing)/layout.tsx` renders `<Navbar />`, a `<main className="pt-20">`
-wrapping `{children}`, and `<Footer />` around every page in the `(marketing)`
+`app/(main)/layout.tsx` renders `<Navbar />`, a `<main className="pt-20">`
+wrapping `{children}`, and `<Footer />` around every page in the `(main)`
 route group — so every marketing page gets the same chrome for free, without
 each `page.tsx` re-importing `Navbar`/`Footer` itself.
 
-`app/(marketing)/page.tsx` (the homepage, `/`) is a thin composition file —
+`app/(main)/page.tsx` (the homepage, `/`) is a thin composition file —
 it just renders all eight sections in mockup order. Each section is its own
-file under `app/(marketing)/_sections/`, one per block in the original
+file under `app/(main)/_sections/`, one per block in the original
 mockup:
 
 1. **Hero** — badge, headline, CTA, hero image in a rounded glass frame.
@@ -102,7 +102,7 @@ files are colocated with the route that uses them but are never themselves
 routable — they're implementation detail of `/`, not pages.
 
 `Navbar` and `Footer` live at the top level under `components/layout/`,
-not inside `_sections/` or the `(marketing)` folder, since `app/(marketing)/layout.tsx`
+not inside `_sections/` or the `(main)` folder, since `app/(main)/layout.tsx`
 imports them once and every page in the group shares that one instance.
 
 ### Server vs. Client components
@@ -119,7 +119,7 @@ everything else in a section is plain static JSX.
 
 ### Sticky footer
 
-`app/(marketing)/layout.tsx` wraps `Navbar`/`main`/`Footer` in a
+`app/(main)/layout.tsx` wraps `Navbar`/`main`/`Footer` in a
 `flex min-h-screen flex-col` container with `main` set to `flex-1`. Without
 this, short pages (the `/courses`, `/pricing`, `/solutions` placeholders)
 render shorter than the viewport and the footer ends up floating mid-page
@@ -212,7 +212,7 @@ Careers/Privacy/Terms/Security links still point at routes that don't
 exist:
 
 ```
-app/(marketing)/            route group — shared Navbar + Footer layout (built)
+app/(main)/            route group — shared Navbar + Footer layout (built)
 ├─ page.tsx                   "/"          ✅ built
 ├─ courses/page.tsx           "/courses"   ✅ built (placeholder)
 ├─ pricing/page.tsx           "/pricing"   ✅ built (placeholder)
@@ -234,7 +234,7 @@ The `/courses`, `/pricing`, and `/solutions` placeholder pages are
 intentionally minimal — a heading + one line of text — just enough to prove
 out routing and nav active-state highlighting before real content exists.
 Each already gets the shared `Navbar`/`Footer` for free via
-`app/(marketing)/layout.tsx`.
+`app/(main)/layout.tsx`.
 
 Not planned in detail yet: an authenticated product surface (the org admin
 dashboard and the in-app learner experience mentioned in the copy) — that's
