@@ -1,7 +1,13 @@
 import Reveal from "@/components/ui/Reveal";
 
+/**
+ * Shows the three-part operating model: admin dashboard, InaraX engine, and learner roles.
+ *
+ * @returns The system overview section.
+ */
 export default function ThreeMovingParts() {
   return (
+    // Use a softer container surface to visually separate the system diagram from the surrounding sections.
     <section className="py-24 bg-surface-container-low">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         <Reveal className="text-center mb-16">
@@ -14,6 +20,7 @@ export default function ThreeMovingParts() {
             the other.
           </p>
         </Reveal>
+        {/* The grid reads left-to-right as inputs, intelligence, and outputs. */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Reveal delayMs={100} className="glass-card p-8 rounded-2xl flex flex-col h-full">
             <h3 className="font-headline-sm text-headline-sm mb-8 flex items-center gap-2">
@@ -22,6 +29,7 @@ export default function ThreeMovingParts() {
               </span>
               Org dashboard
             </h3>
+            {/* These stat rows mimic admin metrics so the section feels operational instead of decorative. */}
             <div className="space-y-4 mt-auto">
               <div className="flex justify-between items-center p-4 bg-surface rounded-xl border border-outline-variant/10">
                 <span className="text-on-surface-variant">
@@ -41,6 +49,7 @@ export default function ThreeMovingParts() {
               </div>
             </div>
           </Reveal>
+          {/* Keep the middle node visually dominant because it explains how the platform connects the other two sides. */}
           <Reveal
             delayMs={200}
             className="glass-card p-8 rounded-2xl flex flex-col items-center justify-center bg-primary text-on-primary"
@@ -56,6 +65,7 @@ export default function ThreeMovingParts() {
               personalized individual learning paths.
             </p>
           </Reveal>
+          {/* The learner-side panel mirrors the dashboard card so the flow feels symmetrical. */}
           <Reveal delayMs={300} className="glass-card p-8 rounded-2xl flex flex-col h-full">
             <h3 className="font-headline-sm text-headline-sm mb-8 flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">
@@ -63,6 +73,7 @@ export default function ThreeMovingParts() {
               </span>
               Roles
             </h3>
+            {/* The role pills show that the same subscription serves different audiences. */}
             <div className="space-y-4 mt-auto">
               <div className="p-4 bg-surface rounded-xl border border-outline-variant/10 flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary" />

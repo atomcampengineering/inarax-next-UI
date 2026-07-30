@@ -1,9 +1,16 @@
 import Reveal from "@/components/ui/Reveal";
 
+/**
+ * Explains why generic training programs fail and frames the personalized alternative.
+ *
+ * @returns The problem-statement section for the landing page.
+ */
 export default function WhyGenericTrainingFails() {
   return (
+    // This section uses the base surface so the supporting argument feels grounded and readable.
     <section className="py-24 bg-surface">
       <div className="max-w-container-max mx-auto px-margin-desktop">
+        {/* Present the explanation as a two-column layout so the narrative and proof point stay balanced. */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <Reveal>
             <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">
@@ -24,6 +31,7 @@ export default function WhyGenericTrainingFails() {
             </div>
           </Reveal>
           <Reveal delayMs={150}>
+            {/* The highlighted card turns the abstract problem into a concrete role-based example. */}
             <div className="bg-[#ECF7ED] p-10 rounded-3xl border border-[#C6E7C8]">
               <span className="material-symbols-outlined text-4xl text-[#2E7D32] mb-6">
                 psychology

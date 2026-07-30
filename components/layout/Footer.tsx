@@ -16,9 +16,16 @@ const contactLinks = [
   { label: "Blog", href: "/blog" },
 ];
 
+/**
+ * Renders the site footer with product, legal, and contact navigation links.
+ *
+ * @returns The shared marketing footer.
+ */
 export default function Footer() {
   return (
+    // Use the darker inverse surface to separate the footer from the main content stack.
     <footer className="bg-inverse-surface border-t border-outline-variant/10">
+      {/* Lay out the link groups in columns that collapse cleanly on smaller screens. */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto">
         <div className="col-span-2 md:col-span-1">
           <div className="font-headline-sm text-headline-sm font-bold text-inverse-on-surface mb-4">
@@ -30,6 +37,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">
+      {/* Keep the legal line and utility icons in a separate row so they read like footer metadata. */}
             Product
           </h4>
           <ul className="space-y-4">

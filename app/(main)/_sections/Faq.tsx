@@ -33,13 +33,20 @@ const faqs = [
   },
 ];
 
+/**
+ * Answers the most common buyer questions without forcing the page into a separate support flow.
+ *
+ * @returns The FAQ accordion section.
+ */
 export default function Faq() {
   return (
+    // The lighter container surface makes the FAQ feel like a distinct reference area.
     <section className="py-24 bg-surface-container">
       <div className="max-w-3xl mx-auto px-margin-desktop">
         <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
           Questions we hear often
         </h2>
+        {/* Keep the accordion stack compact so answers stay scannable. */}
         <div className="space-y-4">
           {faqs.map((faq) => (
             <AccordionItem

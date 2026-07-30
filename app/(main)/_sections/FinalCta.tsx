@@ -1,7 +1,13 @@
 import Reveal from "@/components/ui/Reveal";
 
+/**
+ * Ends the page with the final conversion prompt and secondary navigation choices.
+ *
+ * @returns The closing call-to-action section.
+ */
 export default function FinalCta() {
   return (
+    // Close the page on the darkest surface so the final action feels deliberate and contained.
     <section className="py-24 bg-inverse-surface text-on-primary">
       <div className="max-w-container-max mx-auto px-margin-desktop text-center">
         <Reveal>
@@ -16,6 +22,7 @@ export default function FinalCta() {
             subscription and delivery plan to match.
           </p>
         </Reveal>
+        {/* Keep both actions visible on mobile by stacking them before they expand to a row on larger screens. */}
         <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <button className="w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95">
             Request a consultation

@@ -29,13 +29,20 @@ const steps = [
   },
 ];
 
+/**
+ * Explains the delivery flow in three ordered steps so prospects can understand the implementation path.
+ *
+ * @returns The process section with expandable step cards.
+ */
 export default function HowItWorks() {
   return (
+    // Reuse the neutral surface so the accordion cards provide the primary visual hierarchy.
     <section className="py-24 bg-surface">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
           How it works
         </h2>
+        {/* Delay each card slightly to create a staggered reveal without extra choreography. */}
         <div className="max-w-3xl mx-auto space-y-4">
           {steps.map((step, index) => (
             <Reveal key={step.title} delayMs={index * 100}>
@@ -63,6 +70,7 @@ export default function HowItWorks() {
                   </div>
                 }
               >
+                {/* The expanded content adds detail without forcing the whole section to be permanently long. */}
                 <div className="py-6 ml-12 border-t border-outline-variant/10 text-on-surface-variant">
                   {step.detail}
                 </div>
