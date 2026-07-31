@@ -1,105 +1,109 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const productLinks = [
   { label: "Courses", href: "/courses" },
-  { label: "Enterprise", href: "/enterprise" },
   { label: "Pricing", href: "/pricing" },
+  { label: "B2B", href: "/b2b" },
+  { label: "Enterprise", href: "/enterprise" },
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Security", href: "/security" },
+  { label: "Legal", href: "#" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ];
 
-const contactLinks = [
-  { label: "Contact Sales", href: "/contact-sales" },
-  { label: "Careers", href: "/careers" },
-  { label: "Blog", href: "/blog" },
+const socialLinks = [
+  { label: "Website", icon: "public" },
+  { label: "Chat", icon: "chat" },
+  { label: "Careers", icon: "work" },
 ];
 
 /**
- * Renders the site footer with product, legal, and contact navigation links.
+ * Renders the site footer with the brand blurb, product/legal navigation,
+ * a consultation CTA, and social links.
  *
  * @returns The shared marketing footer.
  */
 export default function Footer() {
   return (
-    // Use the darker inverse surface to separate the footer from the main content stack.
-    <footer className="bg-inverse-surface border-t border-outline-variant/10">
-      {/* Lay out the link groups in columns that collapse cleanly on smaller screens. */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter px-margin-desktop py-12 max-w-container-max mx-auto">
-        <div className="col-span-2 md:col-span-1">
-          <div className="font-headline-sm text-headline-sm font-bold text-inverse-on-surface mb-4">
-            InaraX
-          </div>
-          <p className="text-on-surface-variant text-body-sm max-w-xs mb-4">
-            Adaptive learning for individuals &amp; teams.
-          </p>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">
-      {/* Keep the legal line and utility icons in a separate row so they read like footer metadata. */}
-            Product
-          </h4>
-          <ul className="space-y-4">
-            {productLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  className="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm"
-                  href={link.href}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">
-            Legal
-          </h4>
-          <ul className="space-y-4">
-            {legalLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  className="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm"
-                  href={link.href}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-label-caps text-on-primary-fixed-variant mb-6 uppercase">
-            Contact
-          </h4>
-          <ul className="space-y-4">
-            {contactLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  className="text-on-surface-variant hover:text-inverse-on-surface transition-colors text-body-sm"
-                  href={link.href}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+    // Light surface footer, per the "Corporate Modernism" design system — a thin top border
+    // separates it from the page instead of the previous dark inverse-surface band.
+    <footer className="w-full px-margin-desktop py-size-lg grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/50">
+      <div className="space-y-size-md">
+        <Image
+          alt="InaraX Logo"
+          className="w-32 object-contain mb-size-md"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8mT3Hbo_ioxofYAmD1WXUWXOwqLmTvyGkevd_DQvfH96zMa7DbE-r9Al-XOauSrOruC5u6OZd4XCy6fiSg6VdoCBr1bCOZTLySuzFEc00xVv-VHffIeIg2LNBIB2gKDvLGXaLR8znPXHEcm3IDUXfUBYDCZmXzgpsPqjxBj-OwQOfTpB4MtZNE7XzbiVRG6hZB780qunFDK44BLjwKamDOLb6sDOUcQuFTdPYuJY2fxXitSxL3-1P-1zkS7x3c-1q7zOzaCNdCos"
+          width={128}
+          height={40}
+        />
+        <p className="text-on-surface-variant font-body-md">
+          Personalized learning paths powered by AI, verified by industry
+          experts. A product of Atomcamp Arabia.
+        </p>
+        <div className="flex gap-size-md">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              className="text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              aria-label={social.label}
+            >
+              <span className="material-symbols-outlined">
+                {social.icon}
+              </span>
+            </a>
+          ))}
         </div>
       </div>
-      <div className="max-w-container-max mx-auto px-margin-desktop py-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-on-surface-variant text-body-sm">
+      <div>
+        <h4 className="font-headline-md text-headline-md mb-size-md">Product</h4>
+        <ul className="space-y-size-sm">
+          {productLinks.map((link) => (
+            <li key={link.label}>
+              <Link
+                className="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1"
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-headline-md text-headline-md mb-size-md">Legal</h4>
+        <ul className="space-y-size-sm">
+          {legalLinks.map((link) => (
+            <li key={link.label}>
+              <Link
+                className="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1"
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-headline-md text-headline-md mb-size-md">Contact</h4>
+        <p className="text-on-surface-variant font-body-md">
+          Ready to start? Get in touch with our learning advisors.
+        </p>
+        <Link
+          className="mt-size-md inline-block text-primary font-label-md text-label-md border-b-2 border-primary"
+          href="/contact-sales"
+        >
+          Request a consultation
+        </Link>
+      </div>
+      <div className="col-span-1 md:col-span-4 pt-size-lg border-t border-outline-variant/30 text-center">
+        <p className="text-on-surface-variant font-label-md text-label-md">
           © 2024 InaraX AI. All rights reserved.
         </p>
-        <div className="flex gap-6">
-          <span className="material-symbols-outlined text-on-surface-variant hover:text-white cursor-pointer">
-            language
-          </span>
-          <span className="material-symbols-outlined text-on-surface-variant hover:text-white cursor-pointer">
-            hub
-          </span>
-        </div>
       </div>
     </footer>
   );

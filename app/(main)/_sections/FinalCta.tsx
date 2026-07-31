@@ -1,37 +1,37 @@
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * Ends the page with the final conversion prompt and secondary navigation choices.
+ * Ends the homepage with one last conversion prompt for both individual
+ * learners and organizations.
  *
- * @returns The closing call-to-action section.
+ * @returns The closing call-to-action band.
  */
 export default function FinalCta() {
   return (
-    // Close the page on the darkest surface so the final action feels deliberate and contained.
-    <section className="py-24 bg-inverse-surface text-on-primary">
-      <div className="max-w-container-max mx-auto px-margin-desktop text-center">
-        <Reveal>
-          <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">
-            Let&apos;s talk
-          </h2>
-        </Reveal>
-        <Reveal delayMs={100}>
-          <p className="font-body-lg text-body-lg mb-10 text-white/70 max-w-2xl mx-auto">
-            Tell us your organization, a rough seat count, and the skills or
-            outcomes you need the course to support. We&apos;ll map a
-            subscription and delivery plan to match.
-          </p>
-        </Reveal>
-        {/* Keep both actions visible on mobile by stacking them before they expand to a row on larger screens. */}
-        <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95">
-            Request a consultation
+    <section className="py-size-xl px-margin-desktop relative overflow-hidden bg-surface">
+      <Reveal className="max-w-4xl mx-auto text-center relative z-10 px-size-lg py-size-xl rounded-3xl border border-white/10 bg-inarax-black shadow-2xl">
+        <h2 className="text-white font-display-lg text-display-lg-mobile md:text-headline-lg mb-size-lg">
+          Start learning with inaraX
+        </h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-size-md">
+          <button
+            type="button"
+            className="bg-primary-container text-on-primary font-headline-md text-headline-md px-size-xl py-size-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95"
+          >
+            Get started
           </button>
-          <button className="w-full sm:w-auto border border-white/20 text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-all active:scale-95">
-            Browse courses
-          </button>
-        </Reveal>
-      </div>
+          <Link
+            className="border border-white/20 text-white font-headline-md text-headline-md px-size-xl py-size-md rounded-lg hover:bg-white/5 transition-all"
+            href="/b2b"
+          >
+            For organizations →
+          </Link>
+        </div>
+        <p className="mt-size-md text-outline-variant font-label-md text-label-md">
+          Join 5,000+ professionals advancing their careers today.
+        </p>
+      </Reveal>
     </section>
   );
 }

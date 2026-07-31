@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans } from "next/font/google";
+import { Inter, Open_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +12,12 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["400", "600"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,9 +38,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Attach the two font families to CSS variables so Tailwind tokens can use them globally.
+  // Attach the font families to CSS variables so Tailwind tokens can use them globally.
   return (
-    <html lang="en" className={`${inter.variable} ${openSans.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${openSans.variable} ${spaceGrotesk.variable}`}
+    >
       {/* Load Material Symbols once at the root so every section can reuse the icon font. */}
       <head>
         <link

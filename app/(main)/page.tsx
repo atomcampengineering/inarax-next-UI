@@ -1,27 +1,23 @@
 import Hero from "./_sections/Hero";
-import WhyGenericTrainingFails from "./_sections/WhyGenericTrainingFails";
-import ThreeMovingParts from "./_sections/ThreeMovingParts";
-import HowItWorks from "./_sections/HowItWorks";
-import WhyPartnerWithInaraX from "./_sections/WhyPartnerWithInaraX";
-import EnterpriseReady from "./_sections/EnterpriseReady";
+import KeyFeatures from "./_sections/KeyFeatures";
+import PersonalizedPath from "./_sections/PersonalizedPath";
+import WhyChooseInaraX from "./_sections/WhyChooseInaraX";
 import Faq from "./_sections/Faq";
 import FinalCta from "./_sections/FinalCta";
 
 /**
- * Renders the marketing landing page by composing the top-level conversion
- * sections. Navigation and footer are provided by the (marketing) layout.
+ * Renders the site homepage by composing its marketing sections in mockup
+ * order. Navigation and footer come from the shared (main) layout.
  *
- * @returns The homepage for the public marketing site.
+ * @returns The homepage.
  */
 export default function Home() {
   return (
     <>
       <Hero />
-      <WhyGenericTrainingFails />
-      <ThreeMovingParts />
-      <HowItWorks />
-      <WhyPartnerWithInaraX />
-      <EnterpriseReady />
+      <KeyFeatures />
+      <PersonalizedPath />
+      <WhyChooseInaraX />
       <Faq />
       <FinalCta />
     </>

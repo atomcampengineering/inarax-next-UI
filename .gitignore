@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# claude chat files
+2026-07-30-173011-local-command-caveatcaveat-the-messages-below.txt

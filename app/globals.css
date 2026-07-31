@@ -2,85 +2,94 @@
 
 @theme {
   /* Colors */
-  --color-primary-container: #0050ef;
-  --color-on-surface-variant: #434656;
-  --color-surface-variant: #e1e1ee;
-  --color-surface-container-low: #f3f2ff;
-  --color-primary-fixed: #dce1ff;
-  --color-inverse-surface: #2e303a;
-  --color-on-primary-fixed: #001550;
+  --color-surface-container-low: #f2f4f4;
+  --color-on-tertiary-fixed-variant: #574500;
   --color-on-primary: #ffffff;
-  --color-surface-dim: #d9d9e6;
-  --color-on-primary-container: #d5dbff;
-  --color-surface-container-lowest: #ffffff;
-  --color-tertiary-container: #b53001;
-  --color-on-secondary-fixed: #1c1b1b;
-  --color-tertiary-fixed-dim: #ffb5a0;
-  --color-on-tertiary-container: #ffd3c7;
-  --color-surface-tint: #004ee9;
-  --color-on-surface: #191b24;
-  --color-primary: #003cb9;
-  --color-inverse-primary: #b6c4ff;
-  --color-on-primary-fixed-variant: #003ab3;
   --color-error-container: #ffdad6;
-  --color-secondary-fixed: #e5e2e1;
-  --color-primary-fixed-dim: #b6c4ff;
-  --color-outline-variant: #c3c5d8;
-  --color-surface-bright: #faf8ff;
-  --color-on-tertiary-fixed: #3b0900;
-  --color-background: #faf8ff;
-  --color-surface-container-high: #e7e7f4;
-  --color-inverse-on-surface: #f0f0fd;
-  --color-on-error: #ffffff;
-  --color-surface-container: #ededfa;
-  --color-secondary-container: #e5e2e1;
-  --color-on-tertiary: #ffffff;
+  --color-on-surface-variant: #434656;
+  --color-surface-dim: #d8dada;
   --color-on-secondary-container: #656464;
-  --color-outline: #737687;
-  --color-on-secondary: #ffffff;
-  --color-surface: #faf8ff;
-  --color-on-tertiary-fixed-variant: #872100;
-  --color-tertiary: #8b2200;
   --color-secondary-fixed-dim: #c8c6c5;
-  --color-on-secondary-fixed-variant: #474646;
-  --color-tertiary-fixed: #ffdbd1;
-  --color-on-background: #191b24;
-  --color-error: #ba1a1a;
-  --color-secondary: #5f5e5e;
+  --color-on-surface: #191c1c;
+  --color-tertiary-container: #cea700;
+  --color-on-tertiary-container: #4e3e00;
   --color-on-error-container: #93000a;
-  --color-surface-container-highest: #e1e1ee;
+  --color-on-error: #ffffff;
+  --color-surface-bright: #f8faf9;
+  --color-tertiary-fixed-dim: #efc200;
+  --color-tertiary-fixed: #ffe084;
+  --color-secondary-fixed: #e5e2e1;
+  --color-surface-variant: #e1e3e3;
+  --color-tertiary: #735c00;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary-fixed-dim: #b6c4ff;
+  --color-primary-container: #0050ef;
+  --color-on-tertiary: #ffffff;
+  --color-surface: #f8faf9;
+  --color-on-background: #191c1c;
+  --color-inverse-on-surface: #eff1f1;
+  --color-secondary-container: #e5e2e1;
+  --color-outline-variant: #c3c5d8;
+  --color-secondary: #5f5e5e;
+  --color-on-secondary: #ffffff;
+  --color-inverse-surface: #2e3131;
+  --color-error: #ba1a1a;
+  --color-inverse-primary: #b6c4ff;
+  --color-surface-tint: #004ee9;
+  --color-outline: #737687;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-tertiary-fixed: #231b00;
+  --color-primary: #003cb9;
+  --color-surface-container-highest: #e1e3e3;
+  --color-surface-container: #eceeee;
+  --color-background: #f8faf9;
+  --color-primary-fixed: #dce1ff;
+  --color-on-primary-fixed: #001550;
+  --color-on-primary-fixed-variant: #003ab3;
+  --color-surface-container-high: #e7e8e8;
+  --color-on-primary-container: #d5dbff;
+  --color-on-secondary-fixed-variant: #474646;
+  --color-inarax-black: #131313;
 
   /* Border radius */
-  --radius: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
-  --radius-full: 0.75rem;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
 
   /* Spacing */
   --spacing-container-max: 1280px;
   --spacing-margin-mobile: 16px;
-  --spacing-margin-desktop: 40px;
+  --spacing-margin-desktop: 64px;
   --spacing-gutter: 24px;
   --spacing-base: 8px;
+  /* size- prefixed so it does not collide with Tailwind default max-w/w/h scale */
+  --spacing-size-xs: 4px;
+  --spacing-size-sm: 12px;
+  --spacing-size-md: 24px;
+  --spacing-size-lg: 48px;
+  --spacing-size-xl: 80px;
 
   /* Font families */
-  --font-display-lg-mobile: var(--font-inter), sans-serif;
-  --font-display-lg: var(--font-inter), sans-serif;
+  --font-display-lg-mobile: var(--font-space-grotesk), sans-serif;
+  --font-display-lg: var(--font-space-grotesk), sans-serif;
   --font-body-md: var(--font-open-sans), sans-serif;
   --font-body-lg: var(--font-open-sans), sans-serif;
-  --font-headline-md: var(--font-inter), sans-serif;
+  --font-headline-md: var(--font-space-grotesk), sans-serif;
+  --font-headline-lg: var(--font-space-grotesk), sans-serif;
+  --font-label-md: var(--font-open-sans), sans-serif;
   --font-label-caps: var(--font-inter), sans-serif;
   --font-headline-sm: var(--font-inter), sans-serif;
   --font-body-sm: var(--font-open-sans), sans-serif;
 
   /* Font sizes (size + line-height + letter-spacing + weight) */
-  --text-display-lg-mobile: 32px;
-  --text-display-lg-mobile--line-height: 40px;
-  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-display-lg-mobile: 40px;
+  --text-display-lg-mobile--line-height: 48px;
+  --text-display-lg-mobile--letter-spacing: -0.01em;
   --text-display-lg-mobile--font-weight: 700;
 
-  --text-display-lg: 48px;
-  --text-display-lg--line-height: 56px;
+  --text-display-lg: 64px;
+  --text-display-lg--line-height: 70.4px;
   --text-display-lg--letter-spacing: -0.02em;
   --text-display-lg--font-weight: 700;
 
@@ -89,12 +98,21 @@
   --text-body-md--font-weight: 400;
 
   --text-body-lg: 18px;
-  --text-body-lg--line-height: 28px;
+  --text-body-lg--line-height: 28.8px;
   --text-body-lg--font-weight: 400;
 
   --text-headline-md: 24px;
-  --text-headline-md--line-height: 32px;
+  --text-headline-md--line-height: 31.2px;
   --text-headline-md--font-weight: 600;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 38.4px;
+  --text-headline-lg--font-weight: 700;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 16.8px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 600;
 
   --text-label-caps: 12px;
   --text-label-caps--line-height: 16px;
@@ -149,5 +167,41 @@
   .glass-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Faint 12-column blueprint lines for full-bleed/dark sections, per the "Corporate Modernism" design system. */
+  .grid-blueprint {
+    background-image: linear-gradient(
+      to right,
+      rgba(67, 70, 86, 0.08) 1px,
+      transparent 1px
+    );
+    background-size: calc(100% / 12) 100%;
+  }
+
+  .soft-glow-shadow:hover {
+    box-shadow: 0 4px 24px rgba(0, 80, 239, 0.25);
+  }
+
+  /* Always-on version of the glow, for CTAs that should look "powered on" without a hover state. */
+  .primary-cta-glow {
+    box-shadow: 0 4px 24px rgba(0, 80, 239, 0.25);
+  }
+
+  /* From frontend-stitch/courses/code.html — a brighter, more "floating" glass
+     card than .glass-card, used for the "How inaraX adapts to you" showcase. */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 80, 239, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .liquid-glass:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px 0 rgba(0, 80, 239, 0.12);
+    border-color: rgba(0, 80, 239, 0.2);
   }
 }

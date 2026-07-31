@@ -1,0 +1,521 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>InaraX | Personalized AI Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f4",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434656",
+                        "surface-dim": "#d8dada",
+                        "on-secondary-container": "#656464",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#191c1c",
+                        "tertiary-container": "#cea700",
+                        "on-tertiary-container": "#4e3e00",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8faf9",
+                        "tertiary-fixed-dim": "#efc200",
+                        "tertiary-fixed": "#ffe084",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-variant": "#e1e3e3",
+                        "tertiary": "#735c00",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "primary-container": "#0050ef",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8faf9",
+                        "on-background": "#191c1c",
+                        "inverse-on-surface": "#eff1f1",
+                        "secondary-container": "#e5e2e1",
+                        "outline-variant": "#c3c5d8",
+                        "secondary": "#5f5e5e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3131",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-tint": "#004ee9",
+                        "outline": "#737687",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#231b00",
+                        "primary": "#003cb9",
+                        "surface-container-highest": "#e1e3e3",
+                        "surface-container": "#eceeee",
+                        "background": "#f8faf9",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed": "#001550",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "surface-container-high": "#e7e8e8",
+                        "on-primary-container": "#d5dbff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "inarax-black": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Open Sans"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Open Sans"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Open Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .grid-blueprint {
+            background-image: linear-gradient(to right, rgba(67, 70, 86, 0.08) 1px, transparent 1px);
+            background-size: calc(100% / 12) 100%;
+        }
+        .soft-glow-shadow:hover {
+            box-shadow: 0 4px 24px rgba(0, 80, 239, 0.25);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .primary-cta-glow {
+            box-shadow: 0 4px 24px rgba(0, 80, 239, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-base max-w-full mx-auto bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center gap-md"><img alt="InaraX Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLOHzC1r1Oc4J1980rUoxcGv427JMMGhFqSbr5nh21z0Ij78P-nMdMuCQglUcrfB8y1vCLtSQLV9Bu7LaYlzPu3543I2c-AJ0mJrow7gARBqnElScqMuNHMf3X8FDPeGdzIUWTB1AjCXJxs3izaFwag7Ti1fR0gBXdbaCt78ZGVv6bOliKfi3kf_Kp-mXviMqIB4bSEL_zyvGXN266UbmCTGsyn_Wy1PVVM2WmgQ8WtY-V6Y0Que8K3taSoqzDvHqmGk2xNae87Q"></div>
+<div class="hidden md:flex items-center gap-lg ml-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#">B2B</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-secondary text-label-md font-label-md px-md py-xs hover:bg-secondary/5 rounded-full transition-all">Sign in</button>
+<button class="bg-primary-container text-on-primary px-md py-base rounded-full text-label-md font-label-md soft-glow-shadow transition-transform active:scale-95">Get started</button>
+</div>
+</nav>
+<main class="pt-[72px]">
+<!-- Hero Section (Light Theme with Grid Lines preserved from SCREEN_17) -->
+<section class="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint">
+<div class="max-w-[1440px] mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-xl relative z-10">
+<div class="md:col-span-7 flex flex-col items-start gap-md">
+<div class="flex items-center gap-xs bg-surface-container-low px-sm py-1 rounded-full border border-outline-variant/30">
+<span class="text-label-md font-label-md text-primary tracking-widest">A PRODUCT BY ATOMCAMP ARABIA</span>
+</div>
+<div class="inline-flex items-center gap-xs bg-primary-fixed text-on-primary-fixed-variant px-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span class="text-label-md font-label-md">Adaptive AI learning</span>
+</div>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-inarax-black leading-tight">
+                        Personalized by AI.<br>Verified by humans.
+                    </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        inaraX figures out what you already know, then builds a learning path that fits your level, your field, and your goals and keeps it current as AI changes.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm my-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="text-label-md font-label-md text-on-surface">Dynamic Skill Mapping</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="text-label-md font-label-md text-on-surface">Expert Feedback Loops</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="text-label-md font-label-md text-on-surface">Real-world Case Studies</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="text-label-md font-label-md text-on-surface">Certified Outcomes</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="bg-primary-container text-on-primary px-xl py-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95">Start Learning Now</button>
+<a class="flex items-center gap-xs text-on-surface-variant font-label-md hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">play_arrow</span>
+                                Watch Demo
+                            </a>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative group">
+<div class="relative z-20 p-md bg-white/50 backdrop-blur-sm border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-105">
+<div class="bg-surface-container-highest/10 rounded-lg p-base mb-sm flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+</div>
+<div class="h-2 w-24 bg-outline-variant/30 rounded-full"></div>
+</div>
+<div class="h-2 w-12 bg-primary/40 rounded-full"></div>
+</div>
+<div class="aspect-video bg-surface-container-highest/5 rounded-lg border border-outline-variant/20 flex flex-col items-center justify-center gap-md">
+<div class="w-16 h-16 rounded-full border-4 border-primary/20 border-t-primary animate-spin"></div>
+<p class="text-outline font-label-md text-label-md">InaraX AI is calibrating your curriculum...</p>
+</div>
+<div class="mt-md space-y-sm">
+<div class="h-3 w-full bg-outline-variant/10 rounded-full"></div>
+<div class="h-3 w-3/4 bg-outline-variant/10 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Features Section (from SCREEN_11 sequence) -->
+<section class="bg-white py-xl px-margin-desktop"><div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between gap-lg mb-xl reveal-on-scroll active">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface md:w-1/2">The two-door fork</h2>
+<p class="text-on-surface-variant text-body-lg font-body-lg md:w-1/2">Our platform combines cutting-edge AI with human oversight to create a learning experience that is as unique as your career path.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Left Text -->
+<div class="reveal-on-scroll p-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300 active"><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">For individuals</h3>
+<p class="text-on-surface-variant text-body-lg font-body-lg mb-md">Learn AI built around where you are. Take a placement check, pick your goal, and start at the right level.</p>
+<button class="text-primary font-label-md text-label-md border-b-2 border-primary hover:text-primary-container transition-colors">Get started</button></div>
+<!-- Card 2: Middle Image -->
+<div class="reveal-on-scroll rounded-xl overflow-hidden border border-outline-variant/30 active">
+<img alt="Futuristic workspace illustration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvBlE9Y2-TW_h_2Ari9xz6lhfVffmEPdPcS0bJnER-LFKsasImvxwustryLhFaNZqKJDI7jqv_rl9XPwY2vxiVEP3QSG7ai9rrQxA6ElOXtSJNHmfN_Bxz4RxFo-2_oP15lT-UyephghO_qAL0I8Qk2OjLb2elEA_Djl5qdx8vlmZkG9UJZP3GHjW3ItIG56I8uMr4GpcXuIzGBzF21amDAkQORfR4C71Uz6pGkfD0WS5NNvNcrl9e8fgo">
+</div>
+<!-- Card 3: Right Text -->
+<div class="reveal-on-scroll p-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300 active"><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-sm">For organizations</h3>
+<p class="text-on-surface-variant text-body-lg font-body-lg mb-md">Train your whole team without one-size-fits-all. Personalized to every role, with progress your L&amp;D team can track.</p>
+<button class="text-primary font-label-md text-label-md border-b-2 border-primary hover:text-primary-container transition-colors">Request a consultation</button></div>
+</div>
+</div></section>
+<!-- Your personalized path in 3 steps (Detailed Layout from SCREEN_11) -->
+<section class="bg-[#F7F7F8] py-xl px-margin-desktop relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto">
+<header class="mb-xl max-w-3xl reveal-on-scroll active">
+<div class="flex items-center gap-base mb-sm">
+<span class="w-12 h-[1px] bg-primary"></span>
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest">Process</span>
+</div>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-md">
+                        Your personalized path in 3 steps.
+                    </h2>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+<!-- Step 1: Featured Large -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden group reveal-on-scroll active">
+<div class="h-48 relative overflow-hidden">
+<img alt="Personalization survey preview" class="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOhsIbVRH0E5qPV4uvg1g7SbX0pjBIALgRLF8IOgTa3IAHBqmZljmd8bXMj9p6vhPGLmCZLX6coAdLBzMKGQZxpR5wESj0qEWceS2w0lAH9VCrrad379Rwy98CnGmUefkqjz7bcKsl0Q6mCEjIEid4CYTMys8QasRA6tFZKHvZgyZPnmPliv8L82tQ5Cmo2HWiwCyVLsIOjqs0QX8wnsgTpZK2AVMZhOCXl-gbmBCJBWYwVfnlReQWEQBl73fzLBALS5ajySj2hghX1A">
+</div>
+<div class="p-md">
+<div class="flex items-center gap-base mb-base">
+<span class="text-primary font-headline-md">01</span>
+<h4 class="font-headline-md text-headline-md">Take a quick placement check</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    A short quiz shows inaraX what you already know, so you start at the right level.
+                                </p>
+</div>
+</div>
+<!-- Step 2 & 3 Column -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden group reveal-on-scroll active">
+<div class="h-48 relative">
+<img alt="Placement Assessment Interface" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ7SRdL1Ix-UXOu7bwZJlyQoRWcSyQp5kJB77uCirzu3GItRM1Zg46clnyFc2j61GXuN8WJcSuQyddwlZV0UdjHN-rx75GXpUq57bfQMYutu51EDoMyFZH7PJqZJrzxrz3J0LDZnmaTSGhucbKAn_poRWT-FvsRjBXZjoMTMtdj-MxwMeq8AJw5yJo_uljCQmi5bkQQckVd3serI_UjKc7A6c3j7-38N1nbpQkVp8eRAYsjkiNJ_HhGgum7lx25i_12mRVVIpQswJuJw">
+</div>
+<div class="p-md">
+<div class="flex items-center gap-base mb-base">
+<span class="text-primary font-headline-md">02</span>
+<h4 class="font-headline-md text-headline-md">Pick your goal and field</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Tell us where you're headed — engineer, manager, entrepreneur — and your domain.
+                                </p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden group reveal-on-scroll active">
+<div class="h-48 relative overflow-hidden">
+<img alt="Expert reviewing AI content" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXEtgVcSEe-3Zo1XoiZxvrhLO8xY0gNj_gIR1j1r9gN-WR7BLk47CLCyDnap5oxQ4VI2fgI7yuxHQKiiNClKujIp2kU-8j46TAYwoZDAeuBdCMHzxED_W_LJ1j13ZTiiLk8mrCYBN7DDjLEcmoK8oamLFoSk81o8-mwD2QpwUCETRgWrAs0n2I5SmCQyhD2QGht6H8AWg8-G_pV3uknpyeEzV1NyImkOYnEt2sUbD_ti6fu9Nw0ZoceKG_7sN20M8WSbKOmnKBlq2HwQ">
+
+</div>
+<div class="p-md">
+<div class="flex items-center gap-base mb-base">
+<span class="text-primary font-headline-md">03</span>
+<h4 class="font-headline-md text-headline-md">Learn on a path that adapts</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                    Move forward as you master things, with a tutor that steps in only when you're stuck.
+                                </p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center py-lg reveal-on-scroll active">
+<button class="bg-primary-container text-on-primary px-xl py-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all flex items-center gap-sm active:scale-95">
+                        Start your placement
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Two Brains Architecture (Integrated from SCREEN_11) -->
+<div class="text-center mb-xl max-w-3xl mx-auto mt-xl reveal-on-scroll active">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-md">The 'two brains' architecture</h2>
+<p class="text-on-surface-variant text-body-lg font-body-lg max-w-[700px] mx-auto">
+                        Two systems work together: one keeps you on the smartest path, the other steps in as a tutor the moment you struggle - teaching from verified material only, never guessing.
+                    </p>
+</div>
+<div class="reveal-on-scroll mt-xl bg-[#0A0E12] rounded-2xl p-lg grid grid-cols-1 md:grid-cols-2 gap-lg border border-white/5 active">
+<div class="p-md">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined">bolt</span>
+<h4 class="font-headline-md text-headline-md text-white">Fast Brain — the router</h4>
+</div>
+<p class="text-outline-variant font-body-md">Handles instant responses, basic feedback, and layout generation for rapid progress.</p>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+<h4 class="font-headline-md text-headline-md text-white">Deep Brain — the tutor</h4>
+</div>
+<p class="text-outline-variant font-body-md">Complex problem solving and human-expert hybrid analysis for high-stakes concepts.</p>
+</div>
+</div>
+<!-- B2B Band -->
+<div class="reveal-on-scroll mt-lg bg-primary-container text-on-primary p-lg rounded-xl flex flex-col md:flex-row items-center justify-between gap-md active">
+<div>
+<h5 class="font-headline-md text-headline-md mb-xs">InaraX for Organizations</h5>
+<p class="font-body-md opacity-90">Scalable skill verification for teams of 10 to 10,000.</p>
+</div>
+<button class="bg-white text-primary-container px-lg py-sm rounded-lg font-label-md text-label-md whitespace-nowrap">Request Demo</button>
+</div>
+</div>
+</section>
+<!-- Why learners and teams choose inaraX -->
+<section class="py-xl px-margin-desktop bg-surface">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-xl max-w-4xl mx-auto reveal-on-scroll active">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-md">Why learners and teams choose inaraX</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-3xl mx-auto">Experience a learning platform designed for the modern professional. InaraX combines adaptive AI with human expertise to ensure your skills stay sharp, relevant, and verified in an ever-evolving landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 border border-outline-variant/30 rounded-xl overflow-hidden">
+<div class="p-lg border-b md:border-b-0 md:border-r border-outline-variant/30 flex flex-col gap-md bg-white">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">No time wasted on what you already know.</h3>
+<p class="text-on-surface-variant font-body-lg">Traditional courses force you through linear paths. InaraX skips the noise, focusing 100% of your energy on the missing 20% of your knowledge.</p>
+</div>
+<div class="p-lg border-b md:border-b-0 md:border-r border-outline-variant/30 bg-surface-container-low flex items-center justify-center">
+<img alt="Minimalist AI-themed digital art" class="rounded-lg w-full h-full object-cover aspect-video" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI4oLcGeAem_agCRYNus70GFSv-ncoY1oAQMLB5BaO9fIFfP55I4XHG3t-Igpi9LcPjYb_HUFue0qu1fTu4YJllZbv7hu-Jf0m-VE2MPq2y4jK0y-Jk5K0UC9nS38f0d45a8U0Nrsd3uFEERVwCRrNR1feY6ryoHwOR8n4nr0A93xWU4K80szyJlTwQNmt3Vrz86Lr243ui6cG4z9fApXurxYghCXNq_wokK9r2pTMm2_XbKtlz0iOHUuJ4LR6QvrqpaLtKZoigvo">
+</div>
+<div class="p-lg border-b md:border-b-0 border-outline-variant/30 flex flex-col gap-md bg-white">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Learning in your context, not a void.</h3>
+<p class="text-on-surface-variant font-body-lg">Bring your actual work challenges into the platform. Our AI anonymizes data and generates safe, relevant scenarios for you to practice on.</p>
+</div>
+<div class="p-lg border-b md:border-b-0 md:border-r border-outline-variant/30 bg-surface-container-low flex items-center justify-center">
+<img alt="Futuristic workspace illustration" class="rounded-lg w-full h-full object-cover aspect-video" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4k0peryA6u1LO651lhfvBpxs1dMgCrNVQayAL3h7bJbeF2Xh6tLteXhYXK2hjAiuhhpLs1s7JYIH-DfhLjYaIdK_eVs-uffaaMyCe4PYXAcumPOzBipkXJY2nHsmo98RWscAzEQTlE-X0k5jGA1ZIKpzoC5KbHnXpuVRybR_DCCGDghgSyS8_O-Dl3DRWdWUyW6uCP8b9CxTGv52123AqBwE1iyA9zE1ce0wiHPtk1hyLkt3JoNOFwXKt-5ICHVgzIEBT4ZsdPfg">
+</div>
+<div class="p-lg border-b md:border-b-0 md:border-r border-outline-variant/30 flex flex-col gap-md bg-white">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Support that doesn't end with a video.</h3>
+<p class="text-on-surface-variant font-body-lg">Get access to live office hours every week. When AI reaches its limit, our human experts step in to provide the nuance only a veteran professional can offer.</p>
+</div>
+<div class="p-lg flex flex-col gap-md"><img alt="Live Credentials Certificate" class="w-full aspect-square object-cover rounded-lg mb-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-VPfONuonSzNp-tR6aG1AH9L-Dv8puMnRX6Q1loLqnEiz8QWuWa-opxlvjT3fEOUIEWm0YI2R6wxKv7zswlgV3pECSxJlmVbPQNKgbMYYMswuIabqDsMDw-1BV-Ka1IViYsFI2X_v4wpgUYqBHq22_A89hXGXRiFPCf3gV_CR3yZlWWN7362Ny4ZGiywGJQv2DZsoIOomXx-6B3_oo-etGk5AZVNRIIAEUaUgTI5Z2ncK5pfPTLepd64ZEe0tn3O4qmxjCiP9LSs"></div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-xl px-margin-desktop bg-surface-container-low">
+<div class="mx-auto max-w-[1440px]"><h2 class="font-headline-lg text-headline-lg text-on-surface mb-xl text-center">Frequently asked questions:</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">How does human verification work?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            Every project and assessment you submit is first reviewed by our AI to provide immediate feedback. Subsequently, a subject matter expert from Atomcamp Arabia reviews the submission to ensure it meets real-world industry standards, providing the "Verified by humans" seal.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">Can I use InaraX for my whole team?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            Yes! Our B2B platform allows managers to track team skill progress, identify capability gaps, and deploy personalized learning paths at scale. We offer customized billing and administrative dashboards for organizations.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">What happens if I get stuck?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            InaraX provides 24/7 AI tutoring through our "Fast Brain" for quick queries. For more complex roadblocks, you can attend our weekly live sessions or message a human mentor directly within the platform.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">How is inaraX different from a normal online course?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            A normal course gives everyone the same videos. inaraX checks what you already know, builds a path around your level and goal, and adapts as you go — so you're never stuck in material that's too basic or too advanced.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">Do I need a technical background?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            No. inaraX personalizes for tech and non-tech backgrounds alike, and for different goals - whether you want to become an AI engineer, lead AI in your team, or build something as a founder.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">What happens when my certificate expires?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            AI changes fast, so credentials renew on a cycle. Near expiry, a short re-assessment keeps yours valid or shows you exactly what's changed since you last certified. It's how an inaraX certificate proves you're current today.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">Where does the learning content come from, can I trust it?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            Every explanation, example, and drill is grounded in expert-reviewed material, not the open internet. When the tutor helps you, it draws from verified content only — so you're never quietly taught something wrong.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">Can my company use inaraX to train teams?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            Yes. For organizations, we co-build content around your context and goals, then inaraX personalizes it for every employee by role and seniority. Your L&amp;D team can track progress and outcomes. <button class="text-primary font-label-md text-label-md border-b-2 border-primary ml-xs">Request a consultation</button>
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">What do I get beyond the course itself?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            Membership in a community that keeps learning together: weekly live sessions on the latest in AI, mentoring and implementation support, and ongoing access as the field evolves.
+                        </div>
+</details>
+<details class="group bg-surface border border-outline-variant/30 rounded-lg overflow-hidden transition-all duration-300">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-headline-md text-headline-md">How much does it cost?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body-md">
+                            See Pricing for individual plans and memberships. For teams, pricing is tailored to your scope - <button class="text-primary font-label-md text-label-md border-b-2 border-primary ml-xs">request a consultation</button>.
+                        </div>
+</details>
+</div></div>
+</section>
+<!-- CTA Band -->
+<section class="py-xl px-margin-desktop relative overflow-hidden bg-surface"><div class="max-w-4xl mx-auto text-center relative z-10 px-lg py-xl rounded-3xl border border-white/10 bg-[#0A0E12] shadow-2xl reveal-on-scroll active">
+<h2 class="text-white font-display-lg text-display-lg-mobile md:text-headline-lg mb-lg">Start learning with inaraX</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-primary-container text-on-primary font-headline-md text-headline-md px-xl py-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95">Get started</button>
+<button class="border border-white/20 text-white font-headline-md text-headline-md px-xl py-md rounded-lg hover:bg-white/5 transition-all">For organizations →</button>
+</div>
+<p class="mt-md text-outline-variant font-label-md text-label-md">Join 5,000+ professionals advancing their careers today.</p>
+</div></section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-lg grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/50">
+<div class="space-y-md"><img alt="InaraX Logo" class="w-32 h-auto object-contain mb-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8mT3Hbo_ioxofYAmD1WXUWXOwqLmTvyGkevd_DQvfH96zMa7DbE-r9Al-XOauSrOruC5u6OZd4XCy6fiSg6VdoCBr1bCOZTLySuzFEc00xVv-VHffIeIg2LNBIB2gKDvLGXaLR8znPXHEcm3IDUXfUBYDCZmXzgpsPqjxBj-OwQOfTpB4MtZNE7XzbiVRG6hZB780qunFDK44BLjwKamDOLb6sDOUcQuFTdPYuJY2fxXitSxL3-1P-1zkS7x3c-1q7zOzaCNdCos">
+<p class="text-on-surface-variant font-body-md">Personalized learning paths powered by AI, verified by industry experts. A product of Atomcamp Arabia.</p>
+<div class="flex gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">work</span></a>
+</div></div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-md">Product</h4>
+<ul class="space-y-sm">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Courses</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Pricing</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">B2B</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Enterprise</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-md">Legal</h4>
+<ul class="space-y-sm">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Legal</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Privacy</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-transform inline-block hover:translate-x-1" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md mb-md">Contact</h4>
+<p class="text-on-surface-variant font-body-md">Ready to start? Get in touch with our learning advisors.</p>
+<button class="mt-md text-primary font-label-md text-label-md border-b-2 border-primary">Request a consultation</button>
+</div>
+<div class="col-span-1 md:col-span-4 pt-lg border-t border-outline-variant/30 text-center">
+<p class="text-on-surface-variant font-label-md text-label-md">© 2024 InaraX AI. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+
+
+</body></html>

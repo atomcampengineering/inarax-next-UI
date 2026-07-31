@@ -1,50 +1,109 @@
-import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
+const checklist = [
+  "Dynamic Skill Mapping",
+  "Expert Feedback Loops",
+  "Real-world Case Studies",
+  "Certified Outcomes",
+];
+
 /**
- * Renders the hero section that introduces the value proposition and primary CTA.
+ * Renders the homepage hero: value proposition, proof badges, a feature
+ * checklist, primary CTA, and a decorative "AI calibrating" preview card.
  *
  * @returns The top-of-page marketing hero.
  */
 export default function Hero() {
   return (
-    // Use a warm background block to separate the hero from the rest of the page sections.
-    <section className="relative overflow-hidden py-24 bg-[#FFFBF0]">
-      {/* Build the headline and illustration as a two-column composition on larger screens. */}
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <Reveal>
-          <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-label-caps text-label-caps mb-6 uppercase tracking-wider">
-            For organizations
-          </span>
-          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">
-            AI training for your team, personalized to every role
+    <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint">
+      <div className="max-w-[1440px] mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
+        <Reveal className="md:col-span-7 flex flex-col items-start gap-size-md">
+          <div className="flex items-center gap-size-xs bg-surface-container-low px-size-sm py-1 rounded-full border border-outline-variant/30">
+            <span className="text-label-md font-label-md text-primary tracking-widest">
+              A PRODUCT BY ATOMCAMP ARABIA
+            </span>
+          </div>
+          <div className="inline-flex items-center gap-size-xs bg-primary-fixed text-on-primary-fixed-variant px-size-sm py-1 rounded-lg">
+            <span className="material-symbols-outlined text-[18px]">
+              auto_awesome
+            </span>
+            <span className="text-label-md font-label-md">
+              Adaptive AI learning
+            </span>
+          </div>
+          <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg text-inarax-black leading-tight">
+            Personalized by AI.
+            <br />
+            Verified by humans.
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
-            Your organization subscribes to inaraX, and we build a course for
-            your people. Personalized to each role and seniority. Employees
-            learn in the app while your admins track progress, completion,
-            and quiz scores from a single dashboard.
+          <p className="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+            inaraX figures out what you already know, then builds a learning
+            path that fits your level, your field, and your goals and keeps
+            it current as AI changes.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-inverse-surface text-on-primary px-8 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:shadow-lg active:scale-95">
-              Request a consultation
-            </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-size-sm my-size-md">
+            {checklist.map((item) => (
+              <div key={item} className="flex items-center gap-size-sm">
+                <span
+                  className="material-symbols-outlined text-primary"
+                  style={{ fontVariationSettings: '"FILL" 1' }}
+                >
+                  check_circle
+                </span>
+                <span className="text-label-md font-label-md text-on-surface">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-size-lg">
+            <div className="flex items-center gap-size-md">
+              <button
+                type="button"
+                className="bg-primary-container text-on-primary px-size-xl py-size-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95"
+              >
+                Start Learning Now
+              </button>
+              <a
+                className="flex items-center gap-size-xs text-on-surface-variant font-label-md hover:text-on-surface transition-colors"
+                href="#"
+              >
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontVariationSettings: '"FILL" 1' }}
+                >
+                  play_arrow
+                </span>
+                Watch Demo
+              </a>
+            </div>
           </div>
         </Reveal>
-        <Reveal delayMs={200} className="relative">
-          {/* The image sits inside a circular glass card to match the site’s premium visual language. */}
-          <div className="glass-card p-4 rounded-full aspect-square flex items-center justify-center relative z-10 overflow-hidden">
-            <Image
-              alt="A clean, professional 3D rendering of a futuristic learning interface showing diverse team members connecting via digital nodes."
-              className="w-full h-full object-cover rounded-full shadow-inner"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyF_-7GGOVIUPtgQdYByVdICxiJnePk4kFcXpH9HhJnhmKohoAKHLHmXHBusICXXsOfAY8aR_OzGY628QxZq1eyWrJh2fRmwVtx5pGogOfa8sTSgOF99beBAxiQQJc_k8wVLTZrtVigzzQueIE54tQMU2TG4WuIBhNTbY-fMqdiFHRs1ZVR1vZ9CsDY1PhfhDBbNO8m0QMtO3rgs6Opr3419G87tBwmOccwyoaB8kAi51lNaAYcN3XoisaouT3bh6RtL_ol2h9aZg"
-              fill
-              sizes="(min-width: 768px) 40vw, 90vw"
-              priority
-            />
+        <Reveal delayMs={200} className="md:col-span-5 relative group">
+          {/* Decorative preview card — no real data, just conveys "AI is working" while a user waits. */}
+          <div className="relative z-20 p-size-md bg-white/50 backdrop-blur-sm border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-105">
+            <div className="bg-surface-container-highest/10 rounded-lg p-base mb-size-sm flex items-center justify-between">
+              <div className="flex items-center gap-size-sm">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-sm">
+                    auto_awesome
+                  </span>
+                </div>
+                <div className="h-2 w-24 bg-outline-variant/30 rounded-full" />
+              </div>
+              <div className="h-2 w-12 bg-primary/40 rounded-full" />
+            </div>
+            <div className="aspect-video bg-surface-container-highest/5 rounded-lg border border-outline-variant/20 flex flex-col items-center justify-center gap-size-md">
+              <div className="w-16 h-16 rounded-full border-4 border-primary/20 border-t-primary animate-spin" />
+              <p className="text-outline font-label-md text-label-md">
+                InaraX AI is calibrating your curriculum...
+              </p>
+            </div>
+            <div className="mt-size-md space-y-size-sm">
+              <div className="h-3 w-full bg-outline-variant/10 rounded-full" />
+              <div className="h-3 w-3/4 bg-outline-variant/10 rounded-full" />
+            </div>
           </div>
-          {/* The blurred orb adds depth without introducing another hard-edged shape. */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -z-10" />
         </Reveal>
       </div>
     </section>
