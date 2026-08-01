@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -25,8 +26,14 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-on-surface/5 shadow-sm">
       {/* Constrain the content width while preserving the full-bleed blurred background. */}
       <div className="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
-        <div className="font-headline-md text-headline-md font-bold text-primary">
-          InaraX
+        <div className="space-y-size-md flex">
+          <Image
+            alt="InaraX Logo"
+            className="w-20 h-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8mT3Hbo_ioxofYAmD1WXUWXOwqLmTvyGkevd_DQvfH96zMa7DbE-r9Al-XOauSrOruC5u6OZd4XCy6fiSg6VdoCBr1bCOZTLySuzFEc00xVv-VHffIeIg2LNBIB2gKDvLGXaLR8znPXHEcm3IDUXfUBYDCZmXzgpsPqjxBj-OwQOfTpB4MtZNE7XzbiVRG6hZB780qunFDK44BLjwKamDOLb6sDOUcQuFTdPYuJY2fxXitSxL3-1P-1zkS7x3c-1q7zOzaCNdCos"
+            width={100}
+            height={20}
+          />
         </div>
         <div className="hidden md:flex items-center gap-8">
           {/* Whichever link matches the current route is visually emphasized. */}
