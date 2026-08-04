@@ -9,7 +9,7 @@ const productLinks = [
 ];
 
 const legalLinks = [
-  { label: "Legal", href: "#" },
+  { label: "Legal", href: "/legal" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
 ];
@@ -95,14 +95,14 @@ export default function Footer() {
         </p>
         <Link
           className="mt-size-md inline-block text-primary font-label-md text-label-md border-b-2 border-primary"
-          href="/contact-sales"
+          href="/request-consultation"
         >
           Request a consultation
         </Link>
       </div>
       <div className="col-span-1 md:col-span-4 pt-size-lg border-t border-outline-variant/30 text-center">
         <p className="text-on-surface-variant font-label-md text-label-md">
-          © 2024 InaraX AI. All rights reserved.
+          © 2026 InaraX AI. All rights reserved.
         </p>
       </div>
     </footer>

@@ -20,7 +20,7 @@ export default function B2BBand() {
       </div>
       <Link
         className="bg-white text-primary-container px-size-lg py-size-sm rounded-lg font-label-md text-label-md whitespace-nowrap"
-        href="/contact-sales"
+        href="/request-consultation"
       >
         Request Demo
       </Link>

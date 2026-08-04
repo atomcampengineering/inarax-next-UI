@@ -31,8 +31,8 @@ export default function Navbar() {
             alt="InaraX Logo"
             className="w-20 h-auto object-contain"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8mT3Hbo_ioxofYAmD1WXUWXOwqLmTvyGkevd_DQvfH96zMa7DbE-r9Al-XOauSrOruC5u6OZd4XCy6fiSg6VdoCBr1bCOZTLySuzFEc00xVv-VHffIeIg2LNBIB2gKDvLGXaLR8znPXHEcm3IDUXfUBYDCZmXzgpsPqjxBj-OwQOfTpB4MtZNE7XzbiVRG6hZB780qunFDK44BLjwKamDOLb6sDOUcQuFTdPYuJY2fxXitSxL3-1P-1zkS7x3c-1q7zOzaCNdCos"
-            width={100}
-            height={20}
+            width={80}
+            height={40}
           />
         </div>
         <div className="hidden md:flex items-center gap-8">
@@ -57,18 +57,18 @@ export default function Navbar() {
         </div>
         {/* Keep the auth and signup actions visually distinct from the navigation links. */}
         <div className="flex items-center gap-4">
-          <button
-            type="button"
+          <Link
+            href="/login"
             className="text-on-surface-variant hover:text-primary transition-colors font-body-md"
           >
             Log in
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/signup"
             className="bg-primary-container text-on-primary px-6 py-2 rounded-full font-bold transition-transform active:scale-95"
           >
             Sign up
-          </button>
+          </Link>
           {/* Mobile-only menu toggle — reveals the nav links below md, where they're otherwise hidden. */}
           <button
             type="button"

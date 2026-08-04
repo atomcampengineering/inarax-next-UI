@@ -73,7 +73,7 @@ export default function KeyFeatures() {
             </p>
             <Link
               className="text-primary font-label-md text-label-md border-b-2 border-primary hover:text-primary-container transition-colors"
-              href="/contact-sales"
+              href="/request-consultation"
             >
               Request a consultation
             </Link>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
 /**
@@ -8,8 +9,8 @@ import Reveal from "@/components/ui/Reveal";
  */
 export default function Hero() {
   return (
-    // Use a warm background block to separate the hero from the rest of the page sections.
-    <section className="relative overflow-hidden py-24 bg-[#FFFBF0]">
+    // White background, matching the home and courses page heroes for a consistent look site-wide.
+    <section className="relative overflow-hidden py-24 bg-white">
       {/* Build the headline and illustration as a two-column composition on larger screens. */}
       <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <Reveal>
@@ -27,10 +28,13 @@ export default function Hero() {
             and quiz scores from a single dashboard.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-inverse-surface text-on-primary px-8 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:shadow-lg active:scale-95">
+            <Link
+              href="/request-consultation"
+              className="bg-inverse-surface text-on-primary px-8 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:shadow-lg active:scale-95"
+            >
               Request a consultation
-            </button>
-          
+            </Link>
+
         </div>
         </Reveal>
         <Reveal delayMs={200} className="relative">

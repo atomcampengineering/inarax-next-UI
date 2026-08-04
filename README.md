@@ -5,14 +5,19 @@ AI-skills training course personalized to every role and seniority level on
 their team. Employees learn inside the app; org admins track progress,
 completion, and quiz scores from a dashboard.
 
-This repo is the main/product web app. `/`, `/courses`, and `/pricing` are
-placeholder pages; the one fully built page is `/b2b`, a marketing landing
-page composed of eight sections. It's a fresh Next.js (App Router) project
-originally built from a static design mockup at `frontend-stitch/code.html`,
-translated into typed React components and a Tailwind v4 theme, then
-restyled partway through to match a second mockup at
-`frontend-stitch/home/code.html` (new "Corporate Modernism" palette,
-Space Grotesk headings, a rebuilt light footer).
+This repo is the main/product web app. Three pages are fully built: `/`
+(the homepage), `/b2b` (a marketing landing page), and `/courses`. Every
+other route — `/pricing`, `/enterprise`, `/legal`, `/privacy`, `/terms`,
+`/request-consultation`, `/find-level`, `/login`, `/signup` — is a minimal
+one-heading placeholder, just enough that every Navbar/Footer link and
+in-page CTA resolves instead of 404ing. This is a fresh Next.js (App Router) project originally built from
+a static design mockup at `frontend-stitch/code.html`, translated into
+typed React components and a Tailwind v4 theme, then restyled to match two
+further mockups — `frontend-stitch/home/code.html` (the "Corporate
+Modernism" palette, Space Grotesk headings, the current light footer) and
+`frontend-stitch/courses/code.html` (the `/courses` page source, plus a
+few additional theme refinements — see `changes/*.md` for the full
+history of what changed and why).
 
 ## Table of contents
 
@@ -64,25 +69,35 @@ inarax-new/
 │   ├── layout.tsx                # Root layout: fonts, metadata, <html>/<body>
 │   ├── globals.css               # Tailwind import, @theme design tokens, custom CSS
 │   ├── favicon.ico
-│   └── (main)/               # Route group — shared Navbar + Footer layout
-│       ├── layout.tsx              # Renders <Navbar/> + <main> + <Footer/> around every page below
-│       ├── page.tsx                 # "/" — placeholder page
-│       ├── courses/page.tsx         # "/courses" — placeholder page
-│       ├── pricing/page.tsx         # "/pricing" — placeholder page
-│       └── b2b/                     # "/b2b" — the built marketing landing page
-│           ├── page.tsx                # Composes the eight sections below in mockup order
-│           └── _sections/              # Private folder (not routable) — b2b-page-only sections
-│               ├── Hero.tsx
-│               ├── WhyGenericTrainingFails.tsx
-│               ├── ThreeMovingParts.tsx
-│               ├── HowItWorks.tsx
-│               ├── WhyPartnerWithInaraX.tsx
-│               ├── EnterpriseReady.tsx
-│               ├── Faq.tsx
-│               └── FinalCta.tsx
+│   ├── (main)/               # Route group — shared Navbar + Footer layout
+│   │   ├── layout.tsx              # Renders <Navbar/> + <main> + <Footer/> around every page below
+│   │   ├── page.tsx                 # "/" — composes the sections below
+│   │   ├── _sections/                # Private folder — homepage-only sections
+│   │   │   ├── Hero.tsx, KeyFeatures.tsx, PersonalizedPath.tsx (+ PathSteps.tsx,
+│   │   │   │   TwoBrainsArchitecture.tsx, B2BBand.tsx), WhyChooseInaraX.tsx,
+│   │   │   │   Faq.tsx, FinalCta.tsx
+│   │   ├── courses/                 # "/courses" — built page
+│   │   │   ├── page.tsx                # Composes the sections below
+│   │   │   └── _sections/              # Private folder — courses-page-only sections
+│   │   │       ├── Hero.tsx, ProgramCards.tsx, HowInaraxAdapts.tsx (+
+│   │   │       │   AdaptiveShowcase.tsx, EcosystemFeatures.tsx), CommunityBlurb.tsx,
+│   │   │       │   FinalCta.tsx
+│   │   ├── pricing/page.tsx         # "/pricing" — placeholder page
+│   │   ├── b2b/                     # "/b2b" — the built marketing landing page
+│   │   │   ├── page.tsx                # Composes the eight sections below in mockup order
+│   │   │   └── _sections/              # Private folder — b2b-page-only sections
+│   │   │       ├── Hero.tsx, WhyGenericTrainingFails.tsx, ThreeMovingParts.tsx,
+│   │   │       │   HowItWorks.tsx, WhyPartnerWithInaraX.tsx, EnterpriseReady.tsx,
+│   │   │       │   Faq.tsx, FinalCta.tsx
+│   │   ├── enterprise/, legal/, privacy/, terms/, request-consultation/, find-level/
+│   │   │   └── page.tsx                # One-heading placeholder pages
+│   └── (auth)/                # Route group — own layout, no Navbar/Footer
+│       ├── layout.tsx              # Centered, chrome-free shell
+│       ├── login/page.tsx          # "/login" — placeholder page
+│       └── signup/page.tsx         # "/signup" — placeholder page
 ├── components/
 │   ├── layout/
-│   │   ├── Navbar.tsx            # Site-wide fixed nav (used on every main page)
+│   │   ├── Navbar.tsx            # Site-wide fixed nav (used on every (main) page)
 │   │   └── Footer.tsx            # Site-wide footer
 │   └── ui/
 │       ├── Reveal.tsx            # Scroll-triggered fade-up wrapper (Client Component)
@@ -90,9 +105,15 @@ inarax-new/
 ├── public/                       # Static assets served at /  (currently just create-next-app boilerplate SVGs)
 ├── frontend-stitch/
 │   ├── code.html                 # Original static mockup this app was first built from
-│   └── home/
-│       ├── code.html                # Second mockup — the current "Corporate Modernism" theme/footer source
-│       └── DESIGN.md                # Design-system notes (palette, type, shape) for the home/ mockup
+│   ├── home/
+│   │   ├── code.html                # Second mockup — the homepage / "Corporate Modernism" theme source
+│   │   └── DESIGN.md                # Design-system notes (palette, type, shape) for the home/ mockup
+│   └── courses/
+│       └── code.html                # Third mockup — the /courses page source
+├── changes/                      # Build logs: what was built, CSS conflicts found, and how they were resolved
+│   ├── home-page-build-log.md
+│   ├── courses-page-build-log.md
+│   └── color-consolidation-build-log.md
 ├── docs/                         # Next.js's own documentation, mirrored locally (see AGENTS.md — read before Next.js work)
 ├── next.config.ts / tsconfig.json / eslint.config.mjs / postcss.config.mjs
 ├── package.json
@@ -129,10 +150,16 @@ graph TD
 
     Browser --> RootLayout --> Navbar
 
-    MainSlot -->|" / "| Home["page.tsx<br/>(placeholder)"]
-    MainSlot -->|" /courses "| Courses["courses/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" / "| Home["page.tsx<br/>homepage — 6 composed sections"]
+    MainSlot -->|" /courses "| Courses["courses/page.tsx<br/>5 composed sections"]
     MainSlot -->|" /pricing "| Pricing["pricing/page.tsx<br/>(placeholder)"]
     MainSlot -->|" /b2b "| B2B["b2b/page.tsx<br/>B2B landing page"]
+    MainSlot -->|" /enterprise "| Enterprise["enterprise/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" /legal "| Legal["legal/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" /privacy "| Privacy["privacy/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" /terms "| Terms["terms/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" /request-consultation "| RequestConsultation["request-consultation/page.tsx<br/>(placeholder)"]
+    MainSlot -->|" /find-level "| FindLevel["find-level/page.tsx<br/>(placeholder)"]
 
     B2B --> Hero["Hero"]
     B2B --> WhyFails["WhyGenericTrainingFails"]
@@ -161,39 +188,45 @@ graph TD
     Navbar -.->|nav link| Pricing
     Navbar -.->|nav link| B2B
 
-    subgraph PlannedBox["Planned routes — referenced by Footer, not built yet"]
-        Enterprise["/enterprise"]
-        ContactSales["/contact-sales"]
+    subgraph PlannedBox["Planned routes — nothing links to these yet, not built"]
         Blog["/blog<br/>/blog/[slug]"]
         Careers["/careers"]
-        Privacy["/privacy"]
-        Terms["/terms"]
         Security["/security"]
     end
 
     Footer -.->|Product| Courses
     Footer -.->|Product| Pricing
-    Footer -.->|Product| B2B_hash["B2B (href=#, no route)"]
+    Footer -.->|Product| B2B
     Footer -.->|Product| Enterprise
-    Footer -.->|Legal| Legal_hash["Legal (href=#, no route)"]
+    Footer -.->|Legal| Legal
     Footer -.->|Legal| Privacy
     Footer -.->|Legal| Terms
-    Footer -.->|Contact| ContactSales
+    Footer -.->|Contact| RequestConsultation
+    Home -.->|"Request a consultation" / "Request Demo" CTAs<br/>(KeyFeatures, B2BBand, Faq)| RequestConsultation
+    Home -.->|"For organizations" CTA<br/>(FinalCta)| B2B
+    B2B -.->|"Request a consultation" CTAs<br/>(Hero, FinalCta)| RequestConsultation
+    B2B -.->|"Browse courses" CTA<br/>(FinalCta)| Courses
+    Courses -.->|"Find your level" CTA<br/>(Hero)| FindLevel
+    Courses -.->|"View pricing" CTAs<br/>(Hero, FinalCta)| Pricing
+    Courses -.->|"Explore inaraX for organizations" link<br/>(FinalCta)| B2B
 
-    subgraph AuthGroup["app/(auth)/ — separate layout, no Navbar/Footer, not built"]
-        Login["/login"]
-        Signup["/signup"]
+    subgraph AuthGroup["app/(auth)/ — own layout.tsx, no Navbar/Footer (built)"]
+        Login["login/page.tsx<br/>/login (placeholder)"]
+        Signup["signup/page.tsx<br/>/signup (placeholder)"]
     end
+
+    Navbar -.->|Log in| Login
+    Navbar -.->|Sign up| Signup
 
     classDef page fill:#a7e8bd,stroke:#1a7a43,color:#0a2e18,font-weight:600;
     classDef server fill:#b8c6ff,stroke:#003cb9,color:#14162a,font-weight:600;
     classDef client fill:#ffd9a0,stroke:#b45309,color:#2b1a04,font-weight:600;
     classDef planned fill:transparent,stroke:#9ca3af,stroke-dasharray: 4 3,color:#8a8a8a;
 
-    class Home,Courses,Pricing,B2B page;
+    class Home,Courses,Pricing,B2B,Enterprise,Legal,Privacy,Terms,RequestConsultation,FindLevel,Login,Signup page;
     class RootLayout,Footer,Hero,WhyFails,ThreeParts,HowWorks,WhyPartner,EntReady,Faq,FinalCta server;
     class Navbar,Reveal,Accordion client;
-    class Enterprise,ContactSales,Blog,Careers,Privacy,Terms,Security,Login,Signup,B2B_hash,Legal_hash planned;
+    class Blog,Careers,Security planned;
 ```
 
 ## How the b2b page fits together
@@ -298,8 +331,8 @@ updated mid-project to match a second mockup, `frontend-stitch/home/code.html`
 (the "Corporate Modernism" design system documented in
 `frontend-stitch/home/DESIGN.md`):
 
-- **Colors** (`--color-*`) — a ~49-token Material Design 3–style palette (`primary`, `on-surface-variant`, `surface-container-high`, etc.) → generates `bg-*`, `text-*`, `border-*` utilities. Currently a neutral-grey palette (`surface: #f8faf9`, `on-surface: #191c1c`) with a gold `tertiary` (`#cea700`), replacing the original mockup's blue-violet-tinted palette.
-- **Border radius** (`--radius`, `--radius-lg`, `--radius-xl`, `--radius-full`) — `full` is now `9999px` (a true pill/circle), matching the newer mockup. The *original* mockup intentionally set `full` to a small value (`0.75rem`, a soft rounded-square, not a circle) — anywhere that older soft-rounded look still needs to be preserved (e.g. the Hero image frame and its "For organizations" badge) uses `rounded-xl` explicitly instead of `rounded-full`, since `--radius-xl` (`0.75rem`) still holds that original value.
+- **Colors** (`--color-*`) — a ~52-token Material Design 3–style palette (`primary`, `on-surface-variant`, `surface-container-high`, etc.) → generates `bg-*`, `text-*`, `border-*` utilities. A neutral-grey palette (`surface: #f8faf9`, `on-surface: #191c1c`) with a gold `tertiary` (`#cea700`) and a green `success` family (`success: #2e7d32`, `success-container: #ecf7ed`, mirroring the `error`/`error-container` pattern, used by b2b's "why personalization matters" callout card). The `/`, `/b2b`, and `/courses` routes were each translated from a different static mockup, and each mockup's own `tailwind-config` disagreed slightly on several of these token values (`primary`, `on-surface`, `on-surface-variant`, `outline-variant`) — see `changes/color-consolidation-build-log.md` for the full audit; the home mockup (`frontend-stitch/home/code.html`) was designated the standard, so its values are what's in `globals.css` today. The block itself is organized by role family (Primary, Secondary, Tertiary, Error, Success, Surface & background, Outline, Inverse, then brand-specific one-offs) rather than alphabetically, with a heading comment per group — that grouping is the intended reading order for anyone adding a new color.
+- **Border radius** (`--radius`, `--radius-lg`, `--radius-xl`, `--radius-full`) — `DEFAULT` (the bare `rounded` class) is `0.5rem`; `full` is `9999px` (a true pill/circle), matching the newer mockups. The *original* mockup intentionally set `full` to a small value (`0.75rem`, a soft rounded-square, not a circle) — anywhere that older soft-rounded look still needs to be preserved (e.g. the Hero image frame and its "For organizations" badge) uses `rounded-xl` explicitly instead of `rounded-full`, since `--radius-xl` (`0.75rem`) still holds that original value.
 - **Spacing** (`--spacing-container-max`, `--spacing-margin-desktop`, `--spacing-size-xs/sm/md/lg/xl`, etc.) — named tokens used as `max-w-container-max`, `px-margin-desktop`, `gap-gutter`, `gap-size-md`, `py-size-lg`, etc. See the gotcha below on the `size-` prefix.
 - **Font families** (`--font-display-lg`, `--font-headline-md`, `--font-body-md`, etc.) — each points at a CSS variable exposed by `next/font/google` in `app/layout.tsx`. `display-lg`/`display-lg-mobile`/`headline-md`/`headline-lg` use `--font-space-grotesk`; `body-md`/`body-lg`/`label-md` use `--font-open-sans`; the older `headline-sm`/`label-caps` tokens (still used in a few places, e.g. `Navbar`'s CTA buttons) were deliberately left on `--font-inter` rather than migrated, so Inter stays loaded alongside Space Grotesk and Open Sans.
 - **Font sizes** (`--text-*` + paired `--text-*--line-height` / `--letter-spacing` / `--font-weight`) — Tailwind v4's way of expressing a design-system type scale (size + line-height + tracking + weight bundled under one utility name).
@@ -350,39 +383,46 @@ do it would conflict with that existing convention.
 
 ## Route plan
 
-`/`, `/courses`, `/pricing`, and `/b2b` are built — the first three as
-placeholder pages, `/b2b` as the fully composed marketing landing page (see
-above). `/solutions` existed earlier in the project but has since been
-removed (no nav link, no route, no planned route). The rest of the site's
-route tree was planned in advance (so naming/structure stays consistent as
-more pages are added) but isn't built yet — the footer's Enterprise/Contact
-Sales/Privacy/Terms links still point at routes that don't exist, and its
-"B2B" and "Legal" links are `href="#"` placeholders with no route planned
-at all:
+`/`, `/courses`, `/pricing`, `/b2b`, `/enterprise`, `/legal`, `/privacy`,
+`/terms`, `/request-consultation`, `/find-level`, `/login`, and `/signup`
+are all built — `/`, `/b2b`, and `/courses` as fully composed pages, every
+other page (including the two auth pages) as a minimal one-heading
+placeholder, just enough that every Navbar/Footer link and in-page CTA
+resolves to a real page instead of a 404. `/solutions` existed earlier in
+the project but has since been removed (no nav link, no route, no planned
+route). `/blog`, `/careers`, and `/security` remain planned but not
+built — nothing currently links to them:
 
 ```
 app/(main)/            route group — shared Navbar + Footer layout (built)
-├─ page.tsx                   "/"          ✅ built (placeholder)
-├─ courses/page.tsx           "/courses"   ✅ built (placeholder)
-├─ pricing/page.tsx           "/pricing"   ✅ built (placeholder)
-├─ b2b/page.tsx                "/b2b"      ✅ built (full marketing landing page)
-├─ enterprise/                "/enterprise"
-├─ contact-sales/             "/contact-sales"  (both "Request a consultation" CTAs)
+├─ page.tsx                   "/"              ✅ built (homepage — 6 composed sections)
+├─ courses/page.tsx           "/courses"       ✅ built (5 composed sections)
+├─ pricing/page.tsx           "/pricing"       ✅ built (placeholder)
+├─ b2b/page.tsx                "/b2b"          ✅ built (full marketing landing page)
+├─ enterprise/page.tsx         "/enterprise"   ✅ built (placeholder)
+├─ legal/page.tsx              "/legal"        ✅ built (placeholder)
+├─ privacy/page.tsx            "/privacy"      ✅ built (placeholder)
+├─ terms/page.tsx              "/terms"        ✅ built (placeholder)
+├─ request-consultation/page.tsx "/request-consultation" ✅ built (placeholder — "Request a consultation"/"Request Demo" CTAs across Home, b2b, and Footer)
+├─ find-level/page.tsx         "/find-level"   ✅ built (placeholder — courses Hero's "Find your level" CTA)
 ├─ blog/                      "/blog", "/blog/[slug]"
 ├─ careers/                   "/careers"
-├─ privacy/                   "/privacy"
-├─ terms/                     "/terms"
 └─ security/                  "/security"
 
-app/(auth)/                 route group — minimal centered layout, no nav/footer (not built)
-├─ login/                     "/login"
-└─ signup/                    "/signup"
+app/(auth)/             route group — minimal centered layout, no nav/footer (built)
+├─ layout.tsx                  Centered, chrome-free shell (no Navbar/Footer)
+├─ login/page.tsx              "/login"        ✅ built (placeholder)
+└─ signup/page.tsx             "/signup"       ✅ built (placeholder)
 ```
 
-The `/courses` and `/pricing` placeholder pages (and `/`) are intentionally
-minimal — a heading + one line of text — just enough to prove out routing
-and nav active-state highlighting before real content exists. Each already
-gets the shared `Navbar`/`Footer` for free via `app/(main)/layout.tsx`.
+The placeholder pages (everywhere except `/`, `/b2b`, and `/courses`) are
+intentionally minimal — a heading + one line of text — just enough to
+prove out routing and nav active-state highlighting before real content
+exists. The `(main)`
+group's pages get the shared `Navbar`/`Footer` for free via
+`app/(main)/layout.tsx`; the `(auth)` group's `login`/`signup` deliberately
+skip that chrome via their own `app/(auth)/layout.tsx`, since a sign-in
+screen shouldn't offer marketing navigation away from the task at hand.
 
 Not planned in detail yet: an authenticated product surface (the org admin
 dashboard and the in-app learner experience mentioned in the copy) — that's
@@ -392,8 +432,8 @@ a separate surface from this main site.
 
 - **Hero image is a prototype URL.** `Hero.tsx` still points at the mockup's `lh3.googleusercontent.com` placeholder image (allowed via `images.remotePatterns` in `next.config.ts`). Swap for a permanent hosted asset before shipping.
 - **Footer logo is also a prototype URL.** Same `lh3.googleusercontent.com` domain, same caveat — swap for a real hosted logo asset before shipping.
-- **Footer links are still placeholders.** Courses/Pricing/Enterprise/Privacy/Terms point at the planned-but-unbuilt route paths above and will 404 until those pages exist; "B2B" and "Legal" are `href="#"` with no route planned at all. Nav links (Home/Courses/Pricing/B2B) are all live.
-- **Only `/b2b` has real content.** `/`, `/courses`, and `/pricing` are still one-heading placeholders.
+- **Every Navbar/Footer link and in-page CTA now resolves**, but most of them (everywhere except `/`, `/b2b`, and `/courses`) land on a placeholder page with no real content yet.
+- **`/blog`, `/careers`, `/security` remain unbuilt** and unlinked — nothing in the current Navbar/Footer points at them, so there's no active 404 risk, but they're still on the roadmap per the route plan above.
 
 ## Mobile navigation
 

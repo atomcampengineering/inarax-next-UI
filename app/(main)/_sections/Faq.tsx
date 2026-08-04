@@ -41,7 +41,7 @@ const faqs = [
     question: "Can my company use inaraX to train teams?",
     answer:
       "Yes. For organizations, we co-build content around your context and goals, then inaraX personalizes it for every employee by role and seniority. Your L&D team can track progress and outcomes.",
-    cta: { label: "Request a consultation", href: "/contact-sales" },
+    cta: { label: "Request a consultation", href: "/request-consultation" },
   },
   {
     question: "What do I get beyond the course itself?",
@@ -52,7 +52,7 @@ const faqs = [
     question: "How much does it cost?",
     answer:
       "See Pricing for individual plans and memberships. For teams, pricing is tailored to your scope -",
-    cta: { label: "request a consultation", href: "/contact-sales" },
+    cta: { label: "request a consultation", href: "/request-consultation" },
   },
 ];
 

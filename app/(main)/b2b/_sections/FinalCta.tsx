@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
 /**
@@ -24,12 +25,18 @@ export default function FinalCta() {
         </Reveal>
         {/* Keep both actions visible on mobile by stacking them before they expand to a row on larger screens. */}
         <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <button className="w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95">
+          <Link
+            href="/request-consultation"
+            className="inline-block w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95"
+          >
             Request a consultation
-          </button>
-          <button className="w-full sm:w-auto border border-white/20 text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-all active:scale-95">
+          </Link>
+          <Link
+            href="/courses"
+            className="inline-block w-full sm:w-auto border border-white/20 text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-all active:scale-95"
+          >
             Browse courses
-          </button>
+          </Link>
         </Reveal>
       </div>
     </section>

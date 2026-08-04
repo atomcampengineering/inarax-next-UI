@@ -1,18 +1,18 @@
 /**
- * Placeholder landing page for the site's pricing plans, linked from the
- * Navbar, the courses Hero, and both FinalCta sections.
+ * Placeholder landing page for the footer's "Terms" link.
  *
- * @returns A minimal placeholder section; no pricing table is built yet.
+ * @returns A minimal placeholder section; no terms of service are written yet.
  */
-export default function PricingPage() {
+export default function TermsPage() {
   return (
     <section className="py-32 text-center">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-4">
-          This is pricing
+          This is terms
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant">
-          This page is a placeholder — pricing plans aren&apos;t built yet.
+          This page is a placeholder — the terms of service aren&apos;t
+          built yet.
         </p>
       </div>
     </section>

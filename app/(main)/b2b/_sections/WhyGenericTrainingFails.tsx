@@ -32,11 +32,11 @@ export default function WhyGenericTrainingFails() {
           </Reveal>
           <Reveal delayMs={150}>
             {/* The highlighted card turns the abstract problem into a concrete role-based example. */}
-            <div className="bg-[#ECF7ED] p-10 rounded-3xl border border-[#C6E7C8]">
-              <span className="material-symbols-outlined text-4xl text-[#2E7D32] mb-6">
+            <div className="bg-success-container p-10 rounded-3xl border border-success/30">
+              <span className="material-symbols-outlined text-4xl text-success mb-6">
                 psychology
               </span>
-              <p className="font-body-lg text-body-lg text-[#1B5E20] leading-relaxed">
+              <p className="font-body-lg text-body-lg text-on-success-container leading-relaxed">
                 AI for a bank teller ≠ AI for the C-suite. A risk officer and
                 an investment banker need different things again. inaraX
                 personalizes one subscription for every role and level, so

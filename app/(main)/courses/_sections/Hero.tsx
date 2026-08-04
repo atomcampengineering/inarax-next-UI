@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
 const pathStops = [
@@ -38,7 +39,8 @@ const pathStops = [
  */
 export default function Hero() {
   return (
-    <section className="relative py-size-xl overflow-hidden">
+    // White background, matching the home and b2b page heroes for a consistent look site-wide.
+    <section className="relative py-size-xl overflow-hidden bg-white">
       {/* Decorative vertical rules, matching the mockup's technical/blueprint motif. Desktop only. */}
       <div className="hidden lg:block">
         <div className="absolute top-0 bottom-0 w-px bg-outline-variant/20 left-[10%]" />
@@ -60,18 +62,18 @@ export default function Hero() {
           for Professionals.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-size-md mb-size-xl">
-          <button
-            type="button"
+          <Link
+            href="/find-level"
             className="bg-primary text-on-primary font-label-md text-label-md px-size-lg py-size-md rounded active:scale-95 transition-all soft-glow-shadow"
           >
             Find your level
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/pricing"
             className="border border-outline-variant text-on-surface font-label-md text-label-md px-size-lg py-size-md rounded hover:bg-surface-container-low active:scale-95 transition-all"
           >
             View pricing
-          </button>
+          </Link>
         </div>
         <div className="max-w-4xl mx-auto border border-outline-variant/50 rounded-xl p-size-lg bg-surface-container-lowest shadow-sm relative">
           <div className="flex flex-col md:flex-row items-center justify-between gap-size-md relative">

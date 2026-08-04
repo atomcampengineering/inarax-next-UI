@@ -216,3 +216,22 @@ gap in `README.md` — left as-is, matching the mockup exactly.
   styling, working `/pricing` and `/b2b` links).
 - **Not yet done:** a real mobile-width screenshot pass, same outstanding
   item as the home-page log.
+
+---
+
+## 2026-08-04 — Superseded by site-wide color consolidation
+
+This log's "Decision: keep the current theme values for all five
+conflicts" entry above is superseded by
+`changes/color-consolidation-build-log.md`, which did a full cross-page
+audit rather than a page-scoped one. Outcome for the five items that
+entry covered:
+
+- `primary`, `on-surface`, `on-surface-variant`, `outline-variant`:
+  **reaffirmed** — still the current values, but now as a deliberate,
+  permanent, cross-page standard (the user's rule: "use the home page as
+  reference"), not just this page's provisional call.
+- Bare `--radius` (DEFAULT): **changed**, from `0.25rem` to `0.5rem` —
+  the courses mockup's original intent for this page's Hero CTA buttons
+  and `ProgramCards` badge now actually applies. See the other log for
+  the full before/after and verification.
