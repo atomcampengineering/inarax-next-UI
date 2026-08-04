@@ -202,9 +202,9 @@ graph TD
     Footer -.->|Legal| Privacy
     Footer -.->|Legal| Terms
     Footer -.->|Contact| RequestConsultation
-    Home -.->|"Request a consultation" / "Request Demo" CTAs<br/>(KeyFeatures, B2BBand, Faq)| RequestConsultation
+    Home -.->|Request a consultation / Request Demo CTAs<br/>(KeyFeatures, B2BBand, Faq)| RequestConsultation
     Home -.->|"For organizations" CTA<br/>(FinalCta)| B2B
-    B2B -.->|"Request a consultation" CTAs<br/>(Hero, FinalCta)| RequestConsultation
+    B2B -.->|Request a consultation CTAs<br/>(Hero, FinalCta)| RequestConsultation
     B2B -.->|"Browse courses" CTA<br/>(FinalCta)| Courses
     Courses -.->|"Find your level" CTA<br/>(Hero)| FindLevel
     Courses -.->|"View pricing" CTAs<br/>(Hero, FinalCta)| Pricing
