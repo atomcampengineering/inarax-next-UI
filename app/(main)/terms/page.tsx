@@ -6,7 +6,7 @@
 export default function TermsPage() {
   return (
     <section className="py-32 text-center">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-4">
           This is terms
         </h1>

@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="absolute top-0 bottom-0 w-px bg-outline-variant/20 left-[70%]" />
         <div className="absolute top-0 bottom-0 w-px bg-outline-variant/20 left-[90%]" />
       </div>
-      <Reveal className="max-w-container-max mx-auto px-margin-desktop text-center">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
         <span className="inline-block bg-primary/10 text-primary px-base py-size-xs rounded-full font-label-md text-[12px] uppercase mb-size-md font-bold tracking-widest">
           PUBLIC CATALOG
         </span>

@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     // Light surface footer, per the "Corporate Modernism" design system — a thin top border
     // separates it from the page instead of the previous dark inverse-surface band.
-    <footer className="w-full px-margin-desktop py-size-lg grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/50">
+    <footer className="w-full px-margin-mobile md:px-margin-desktop py-size-lg grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/50">
       <div className="space-y-size-md">
         <Image
           alt="InaraX Logo"

@@ -28,7 +28,7 @@ const programs = [
 export default function ProgramCards() {
   return (
     <section className="py-size-xl bg-surface-container-low border-y border-outline-variant/20">
-      <Reveal className="max-w-container-max mx-auto px-margin-desktop">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center mb-size-lg">
           <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
             Choose your AI program

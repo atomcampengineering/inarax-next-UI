@@ -10,7 +10,7 @@ export default function FinalCta() {
   return (
     // Close the page on the darkest surface so the final action feels deliberate and contained.
     <section className="py-24 bg-inverse-surface text-on-primary">
-      <div className="max-w-container-max mx-auto px-margin-desktop text-center">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
         <Reveal>
           <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">
             Let&apos;s talk

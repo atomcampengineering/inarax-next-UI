@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/Reveal";
 export default function FinalCta() {
   return (
     <section className="py-size-xl bg-primary-fixed border-y border-outline-variant/20">
-      <Reveal className="max-w-container-max mx-auto px-margin-desktop">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="flex flex-col items-center text-center">
           <p className="font-label-md text-label-md text-primary tracking-widest uppercase mb-size-sm font-bold">
             GET STARTED

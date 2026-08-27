@@ -12,7 +12,7 @@ export default function Hero() {
     // decision to reuse the existing sitewide texture instead of the mockup's own two-directional
     // .blueprint-lines variant — see changes/pricing-page-build-log.md).
     <section className="relative bg-white overflow-hidden grid-blueprint">
-      <Reveal className="px-margin-desktop py-size-xl max-w-4xl mx-auto text-center">
+      <Reveal className="px-margin-mobile md:px-margin-desktop py-size-xl max-w-4xl mx-auto text-center">
         <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg mb-size-md tracking-tight text-on-surface">
           Plans and pricing
         </h1>

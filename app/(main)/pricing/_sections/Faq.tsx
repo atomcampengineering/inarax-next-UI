@@ -25,7 +25,7 @@ const faqs = [
  */
 export default function Faq() {
   return (
-    <section className="px-margin-desktop py-size-xl max-w-4xl mx-auto">
+    <section className="px-margin-mobile md:px-margin-desktop py-size-xl max-w-4xl mx-auto">
       <div className="text-center mb-size-lg">
         <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm">
           Frequently asked questions

@@ -25,7 +25,7 @@ export default function Navbar() {
     // Keep the header pinned so the primary calls to action stay available while scrolling.
     <nav className="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md border-b border-on-surface/5 shadow-sm">
       {/* Constrain the content width while preserving the full-bleed blurred background. */}
-      <div className="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+      <div className="flex items-center justify-between px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
         <div className="space-y-size-md flex">
           <Image
             alt="InaraX Logo"

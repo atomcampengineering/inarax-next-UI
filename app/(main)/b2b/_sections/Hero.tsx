@@ -12,7 +12,7 @@ export default function Hero() {
     // White background, matching the home and courses page heroes for a consistent look site-wide.
     <section className="relative overflow-hidden py-24 bg-white">
       {/* Build the headline and illustration as a two-column composition on larger screens. */}
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <Reveal>
           
           <span className="inline-block px-4 py-1 rounded-xl bg-primary/10 text-primary font-label-caps text-label-caps mb-6 uppercase tracking-wider">

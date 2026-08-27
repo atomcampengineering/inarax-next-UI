@@ -9,7 +9,7 @@ export default function WhyGenericTrainingFails() {
   return (
     // This section uses the base surface so the supporting argument feels grounded and readable.
     <section className="py-24 bg-surface">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Present the explanation as a two-column layout so the narrative and proof point stay balanced. */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <Reveal>

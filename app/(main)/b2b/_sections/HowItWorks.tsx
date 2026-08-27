@@ -38,7 +38,7 @@ export default function HowItWorks() {
   return (
     // Reuse the neutral surface so the accordion cards provide the primary visual hierarchy.
     <section className="py-24 bg-surface">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
           How it works
         </h2>

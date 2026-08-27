@@ -36,7 +36,7 @@ export default function WhyPartnerWithInaraX() {
   return (
     // Use a higher-contrast surface to signal a new cluster of audience-focused messaging.
     <section className="py-24 bg-surface-container-high">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* The four-column grid gives each stakeholder equal visual weight. */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
