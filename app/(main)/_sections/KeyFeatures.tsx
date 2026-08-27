@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/Reveal";
  */
 export default function KeyFeatures() {
   return (
-    <section className="bg-white py-size-xl px-margin-desktop">
+    <section className="bg-white py-size-xl px-margin-mobile md:px-margin-desktop">
       <div className="max-w-[1440px] mx-auto">
         <Reveal className="flex flex-col md:flex-row items-center justify-between gap-size-lg mb-size-xl">
           <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface md:w-1/2">
@@ -23,7 +23,7 @@ export default function KeyFeatures() {
           </p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          <Reveal className="p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+          <Reveal className="p-size-md sm:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">
                 rocket_launch
@@ -57,7 +57,7 @@ export default function KeyFeatures() {
           </Reveal>
           <Reveal
             delayMs={200}
-            className="p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300"
+            className="p-size-md sm:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300"
           >
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">

@@ -15,7 +15,7 @@ export default function PersonalizedPath() {
     // surface-container-low is the closest theme token to the mockup's raw
     // #F7F7F8 background — see changes/home-page-build-log.md for the note
     // on this substitution.
-    <section className="bg-surface-container-low py-size-xl px-margin-desktop relative overflow-hidden">
+    <section className="bg-surface-container-low py-size-xl px-margin-mobile md:px-margin-desktop relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <Reveal className="mb-size-xl max-w-3xl">
           <div className="flex items-center gap-base mb-size-sm">

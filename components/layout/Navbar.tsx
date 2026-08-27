@@ -57,18 +57,21 @@ export default function Navbar() {
         </div>
         {/* Keep the auth and signup actions visually distinct from the navigation links. */}
         <div className="flex items-center gap-4">
-          <Link
-            href="/login"
-            className="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/signup"
-            className="bg-primary-container text-on-primary px-6 py-2 rounded-full font-bold transition-transform active:scale-95"
-          >
-            Sign up
-          </Link>
+          {/* Hidden below md so they don't crowd the logo/hamburger on narrow screens — moved into the mobile menu instead. */}
+          <div className="hidden md:flex items-center gap-4">
+            <Link
+              href="/login"
+              className="text-on-surface-variant hover:text-primary transition-colors font-body-md"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/signup"
+              className="bg-primary-container text-on-primary px-6 py-2 rounded-full font-bold transition-transform active:scale-95"
+            >
+              Sign up
+            </Link>
+          </div>
           {/* Mobile-only menu toggle — reveals the nav links below md, where they're otherwise hidden. */}
           <button
             type="button"
@@ -107,6 +110,23 @@ export default function Navbar() {
               </Link>
             );
           })}
+          {/* Auth actions live here instead of the header row below md — see the hidden md:flex wrapper above. */}
+          <div className="mt-2 pt-2 border-t border-on-surface/5 flex flex-col gap-1">
+            <Link
+              href="/login"
+              onClick={() => setMobileOpen(false)}
+              className="text-on-surface-variant hover:text-primary transition-colors py-2 font-body-md"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/signup"
+              onClick={() => setMobileOpen(false)}
+              className="bg-primary-container text-on-primary text-center px-6 py-2 rounded-full font-bold transition-transform active:scale-95"
+            >
+              Sign up
+            </Link>
+          </div>
         </div>
       )}
     </nav>

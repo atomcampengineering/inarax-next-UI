@@ -16,7 +16,7 @@ const checklist = [
 export default function Hero() {
   return (
     <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint">
-      <div className="max-w-[1440px] mx-auto px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
+      <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
         <Reveal className="md:col-span-7 flex flex-col items-start gap-size-md">
           <div className="flex items-center gap-size-xs bg-surface-container-low px-size-sm py-1 rounded-full border border-outline-variant/30">
             <span className="text-label-md font-label-md text-primary tracking-widest">
@@ -56,30 +56,31 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap items-center gap-size-lg">
-            <div className="flex items-center gap-size-md">
-              <button
-                type="button"
-                className="bg-primary-container text-on-primary px-size-xl py-size-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95"
+          <div className="flex flex-wrap items-center gap-size-md sm:gap-size-lg">
+            <button
+              type="button"
+              className="bg-primary-container text-on-primary px-size-xl py-size-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95"
+            >
+              Start Learning Now
+            </button>
+            <a
+              className="flex items-center gap-size-xs text-on-surface-variant font-label-md hover:text-on-surface transition-colors"
+              href="#"
+            >
+              <span
+                className="material-symbols-outlined"
+                style={{ fontVariationSettings: '"FILL" 1' }}
               >
-                Start Learning Now
-              </button>
-              <a
-                className="flex items-center gap-size-xs text-on-surface-variant font-label-md hover:text-on-surface transition-colors"
-                href="#"
-              >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontVariationSettings: '"FILL" 1' }}
-                >
-                  play_arrow
-                </span>
-                Watch Demo
-              </a>
-            </div>
+                play_arrow
+              </span>
+              Watch Demo
+            </a>
           </div>
         </Reveal>
-        <Reveal delayMs={200} className="md:col-span-5 relative group">
+        <Reveal
+          delayMs={200}
+          className="md:col-span-5 relative group mt-size-md md:mt-0"
+        >
           {/* Decorative preview card — no real data, just conveys "AI is working" while a user waits. */}
           <div className="relative z-20 p-size-md bg-white/50 backdrop-blur-sm border border-outline-variant/30 rounded-xl overflow-hidden shadow-2xl transition-transform duration-700 group-hover:scale-105">
             <div className="bg-surface-container-highest/10 rounded-lg p-base mb-size-sm flex items-center justify-between">

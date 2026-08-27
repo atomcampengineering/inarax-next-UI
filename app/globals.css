@@ -109,7 +109,7 @@
 
   /* --- Layout constants --- */
   --spacing-container-max: 1280px;
-  --spacing-margin-mobile: 16px;
+  --spacing-margin-mobile: 24px;
   --spacing-margin-desktop: 64px;
   --spacing-gutter: 24px;
   --spacing-base: 8px;

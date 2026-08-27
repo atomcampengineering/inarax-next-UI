@@ -5,7 +5,7 @@ const steps = [
   {
     icon: "shopping_cart",
     step: "STEP 01",
-    title: "1. Subscribe",
+    title: "Subscribe",
     summary: "Commercial scope: seats, term, and success measures.",
     detail:
       "We align with your procurement and strategic goals. Whether you need to upskill 50 managers or 5,000 frontline staff, we define the roadmap together for maximum ROI.",
@@ -13,7 +13,7 @@ const steps = [
   {
     icon: "architecture",
     step: "STEP 02",
-    title: "2. Course",
+    title: "Course",
     summary:
       "We build the course with your subscription funds, personalized for every user.",
     detail:
@@ -22,7 +22,7 @@ const steps = [
   {
     icon: "monitoring",
     step: "STEP 03",
-    title: "3. Monitor",
+    title: "Monitor",
     summary: "One dashboard: progress, completion, and quiz data.",
     detail:
       "Real-time analytics for admins. Identify high-potential talent, monitor engagement across departments, and ensure compliance benchmarks are met through automated reporting.",
