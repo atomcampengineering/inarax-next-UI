@@ -52,11 +52,11 @@ export default function ProgramCards() {
   return (
     <section className="py-size-xl bg-surface-container-low border-y border-outline-variant/20">
       <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="text-center mb-size-lg">
-          <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
+        <div className="mb-size-lg">
+          <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm text-left">
             Choose your AI program
           </h2>
-          <p className="max-w-2xl mx-auto text-on-surface-variant text-body-md text-left md:text-center">
+          <p className="max-w-2xl text-on-surface-variant text-body-md text-left">
             Start with AI for Professionals or AI Literacy — new programs
             launch every month.
           </p>

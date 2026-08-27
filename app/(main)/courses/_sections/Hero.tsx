@@ -48,20 +48,20 @@ export default function Hero() {
         <div className="absolute top-0 bottom-0 w-px bg-outline-variant/20 left-[70%]" />
         <div className="absolute top-0 bottom-0 w-px bg-outline-variant/20 left-[90%]" />
       </div>
-      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <span className="inline-block bg-primary/10 text-primary px-base py-size-xs rounded-full font-label-md text-[12px] uppercase mb-size-md font-bold tracking-widest">
           PUBLIC CATALOG
         </span>
-        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-size-md text-left md:text-center">
+        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-size-md text-left">
           AI programs that start where you are
         </h1>
-        <p className="max-w-3xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left md:text-center">
+        <p className="max-w-3xl font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left">
           Take a quick placement check and inaraX builds a path around your
           level, your field, and your goal — so you&apos;re never stuck
           relearning what you already know. Choose AI for Professionals or
           AI Literacy.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-size-md mb-size-xl">
+        <div className="flex flex-col sm:flex-row justify-start gap-size-md mb-size-xl">
           <Link
             href="/find-level"
             className="bg-primary text-on-primary font-label-md text-label-md px-size-lg py-size-md rounded active:scale-95 transition-all soft-glow-shadow"
@@ -75,7 +75,7 @@ export default function Hero() {
             View pricing
           </Link>
         </div>
-        <div className="max-w-4xl mx-auto border border-outline-variant/50 rounded-xl p-size-lg bg-surface-container-lowest shadow-sm relative">
+        <div className="border border-outline-variant/50 rounded-xl p-size-lg bg-surface-container-lowest shadow-sm relative">
           <div className="flex flex-col md:flex-row items-center justify-between gap-size-md relative">
             <div className="absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 hidden md:block -translate-y-1/2" />
             {pathStops.map((stop) => (
