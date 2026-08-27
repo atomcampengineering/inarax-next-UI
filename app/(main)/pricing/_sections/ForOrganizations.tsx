@@ -12,7 +12,7 @@ export default function ForOrganizations() {
     <Reveal className="my-size-xl mx-margin-mobile md:mx-margin-desktop">
       <div className="bg-surface-container-low rounded-xl p-size-md sm:p-size-xl flex flex-col min-[900px]:flex-row items-center gap-size-lg border border-outline-variant/30">
         <div className="flex-1">
-          <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm text-center min-[900px]:text-left">
+          <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm text-left">
             Training a team?
           </h2>
           <p className="text-body-lg font-body-lg text-on-surface-variant mb-size-md">
@@ -20,7 +20,7 @@ export default function ForOrganizations() {
             with content built around your goals and progress your L&D team
             can track.
           </p>
-          <div className="flex justify-center min-[900px]:justify-start">
+          <div className="flex justify-start">
             {/* Points to /request-consultation, not /b2b — matching the sitewide convention
                 (e.g. home's B2BBand.tsx), not the mockup's own href. */}
             <Link
