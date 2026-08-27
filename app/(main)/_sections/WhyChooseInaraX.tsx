@@ -35,9 +35,9 @@ export default function WhyChooseInaraX() {
           </div>
           <div className="relative min-h-[180px] md:min-h-0 p-size-md sm:p-size-lg border-b md:border-b-0 md:border-r border-outline-variant/30 bg-surface-container-low flex items-center justify-center">
             <Image
-              alt="Minimalist AI-themed digital art"
+              alt="Abstract network of connected nodes representing AI-personalized learning"
               className="rounded-lg object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI4oLcGeAem_agCRYNus70GFSv-ncoY1oAQMLB5BaO9fIFfP55I4XHG3t-Igpi9LcPjYb_HUFue0qu1fTu4YJllZbv7hu-Jf0m-VE2MPq2y4jK0y-Jk5K0UC9nS38f0d45a8U0Nrsd3uFEERVwCRrNR1feY6ryoHwOR8n4nr0A93xWU4K80szyJlTwQNmt3Vrz86Lr243ui6cG4z9fApXurxYghCXNq_wokK9r2pTMm2_XbKtlz0iOHUuJ4LR6QvrqpaLtKZoigvo"
+              src="/images/team-inarax.jpg"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
             />
@@ -54,9 +54,9 @@ export default function WhyChooseInaraX() {
           </div>
           <div className="relative min-h-[180px] md:min-h-0 p-size-md sm:p-size-lg border-b md:border-b-0 md:border-r border-outline-variant/30 bg-surface-container-low flex items-center justify-center">
             <Image
-              alt="Futuristic workspace illustration"
+              alt="A professional working alongside a holographic AI assistant at a futuristic workstation"
               className="rounded-lg object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4k0peryA6u1LO651lhfvBpxs1dMgCrNVQayAL3h7bJbeF2Xh6tLteXhYXK2hjAiuhhpLs1s7JYIH-DfhLjYaIdK_eVs-uffaaMyCe4PYXAcumPOzBipkXJY2nHsmo98RWscAzEQTlE-X0k5jGA1ZIKpzoC5KbHnXpuVRybR_DCCGDghgSyS8_O-Dl3DRWdWUyW6uCP8b9CxTGv52123AqBwE1iyA9zE1ce0wiHPtk1hyLkt3JoNOFwXKt-5ICHVgzIEBT4ZsdPfg"
+              src="/images/choose-inarax.jpg"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
             />
