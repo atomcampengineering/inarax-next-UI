@@ -29,7 +29,7 @@ export default function PersonalizedPath() {
           </h2>
         </Reveal>
         <PathSteps />
-        <Reveal className="flex flex-col items-center justify-center py-size-lg">
+        <Reveal className="flex flex-col items-start justify-center py-size-lg">
           <button
             type="button"
             className="bg-primary-container text-on-primary px-size-md py-size-sm sm:px-size-xl sm:py-size-md rounded-lg font-headline-md text-headline-sm sm:text-headline-md primary-cta-glow transition-all inline-flex items-center gap-size-sm active:scale-95"
