@@ -16,7 +16,7 @@ export default function Hero() {
         <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg mb-size-md tracking-tight text-on-surface">
           Plans and pricing
         </h1>
-        <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        <p className="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto text-left md:text-center">
           Buy a single course for one payment, or get inaraX Plus for the
           full library, live sessions, and community. Cancel anytime.
         </p>
