@@ -22,7 +22,7 @@ export default function KeyFeatures() {
             path.
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-[1000px]:grid-cols-3 gap-gutter">
           <Reveal className="p-size-md sm:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">
@@ -45,7 +45,7 @@ export default function KeyFeatures() {
           </Reveal>
           <Reveal
             delayMs={100}
-            className="relative rounded-xl overflow-hidden border border-outline-variant/30"
+            className="hidden min-[1000px]:block relative rounded-xl overflow-hidden border border-outline-variant/30"
           >
             <Image
               alt="Futuristic workspace illustration"

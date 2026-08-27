@@ -107,7 +107,7 @@ export default function PlansGrid() {
           sessions and community? Get Plus.
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div className="grid grid-cols-1 min-[900px]:grid-cols-3 gap-gutter">
         {plans.map((plan, index) => (
           <Reveal
             key={plan.name}
