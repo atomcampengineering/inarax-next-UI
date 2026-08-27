@@ -24,7 +24,7 @@ export default function WhyChooseInaraX() {
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 border border-outline-variant/30 rounded-xl overflow-hidden">
           <div className="p-size-lg border-b md:border-b-0 md:border-r border-outline-variant/30 flex flex-col gap-size-md bg-white">
-            <h3 className="font-headline-lg text-headline-lg text-on-surface">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">
               No time wasted on what you already know.
             </h3>
             <p className="text-on-surface-variant font-body-lg">
@@ -43,7 +43,7 @@ export default function WhyChooseInaraX() {
             />
           </div>
           <div className="p-size-lg border-b md:border-b-0 border-outline-variant/30 flex flex-col gap-size-md bg-white">
-            <h3 className="font-headline-lg text-headline-lg text-on-surface">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">
               Learning in your context, not a void.
             </h3>
             <p className="text-on-surface-variant font-body-lg">
@@ -62,7 +62,7 @@ export default function WhyChooseInaraX() {
             />
           </div>
           <div className="p-size-lg border-b md:border-b-0 md:border-r border-outline-variant/30 flex flex-col gap-size-md bg-white">
-            <h3 className="font-headline-lg text-headline-lg text-on-surface">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">
               Support that doesn&apos;t end with a video.
             </h3>
             <p className="text-on-surface-variant font-body-lg">

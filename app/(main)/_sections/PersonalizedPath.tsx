@@ -32,7 +32,7 @@ export default function PersonalizedPath() {
         <Reveal className="flex flex-col items-center justify-center py-size-lg">
           <button
             type="button"
-            className="bg-primary-container text-on-primary px-size-xl py-size-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all flex items-center gap-size-sm active:scale-95"
+            className="bg-primary-container text-on-primary px-size-lg py-size-sm sm:px-size-xl sm:py-size-md rounded-lg font-headline-md text-headline-sm sm:text-headline-md primary-cta-glow transition-all flex items-center gap-size-sm active:scale-95"
           >
             Start your placement
             <span className="material-symbols-outlined">arrow_forward</span>

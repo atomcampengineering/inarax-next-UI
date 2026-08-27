@@ -29,7 +29,7 @@ export default function KeyFeatures() {
                 rocket_launch
               </span>
             </div>
-            <h3 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-size-sm">
               For individuals
             </h3>
             <p className="text-on-surface-variant text-body-lg font-body-lg mb-size-md">
@@ -64,7 +64,7 @@ export default function KeyFeatures() {
                 psychology
               </span>
             </div>
-            <h3 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-size-sm">
               For organizations
             </h3>
             <p className="text-on-surface-variant text-body-lg font-body-lg mb-size-md">

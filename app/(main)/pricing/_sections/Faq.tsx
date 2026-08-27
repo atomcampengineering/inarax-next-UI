@@ -39,7 +39,7 @@ export default function Faq() {
           <AccordionItem
             key={faq.question}
             cardClassName="border-b border-outline-variant/30"
-            buttonClassName="w-full flex justify-between items-center font-headline-md text-headline-md text-on-background py-size-sm text-left focus:outline-none"
+            buttonClassName="w-full flex justify-between items-center font-headline-md text-headline-sm sm:text-headline-md text-on-background py-size-sm text-left focus:outline-none"
             trigger={faq.question}
           >
             {/* Bottom padding lives here, on the innermost div, not on the AccordionItem's

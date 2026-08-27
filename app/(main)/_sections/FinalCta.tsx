@@ -11,18 +11,18 @@ export default function FinalCta() {
   return (
     <section className="py-size-xl px-margin-mobile md:px-margin-desktop relative overflow-hidden bg-surface">
       <Reveal className="max-w-4xl mx-auto text-center relative z-10 px-size-md sm:px-size-lg py-size-lg sm:py-size-xl rounded-3xl border border-white/10 bg-inarax-black shadow-2xl">
-        <h2 className="text-white font-display-lg text-display-lg-mobile md:text-headline-lg mb-size-lg">
+        <h2 className="text-white font-display-lg text-headline-lg mb-size-lg">
           Start learning with inaraX
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-size-md">
           <button
             type="button"
-            className="bg-primary-container text-on-primary font-headline-md text-headline-md text-center px-size-md sm:px-size-xl py-size-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95"
+            className="bg-primary-container text-on-primary font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95"
           >
             Get started
           </button>
           <Link
-            className="border border-white/20 text-white font-headline-md text-headline-md text-center px-size-md sm:px-size-xl py-size-md rounded-lg hover:bg-white/5 transition-all"
+            className="border border-white/20 text-white font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg hover:bg-white/5 transition-all"
             href="/b2b"
           >
             For organizations →

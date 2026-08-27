@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/request-consultation"
-              className="bg-inverse-surface text-on-primary px-8 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:shadow-lg active:scale-95"
+              className="bg-inverse-surface text-on-primary px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-headline-sm text-[18px] font-semibold sm:text-headline-sm transition-all hover:shadow-lg active:scale-95"
             >
               Request a consultation
             </Link>
