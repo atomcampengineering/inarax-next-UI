@@ -10,10 +10,10 @@ export default function TwoBrainsArchitecture() {
   return (
     <>
       <Reveal className="text-center mb-size-xl max-w-3xl mx-auto mt-size-xl">
-        <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md">
+        <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md text-left md:text-center">
           The &apos;two brains&apos; architecture
         </h2>
-        <p className="text-on-surface-variant text-body-lg font-body-lg max-w-[700px] mx-auto">
+        <p className="text-on-surface-variant text-body-lg font-body-lg max-w-[700px] mx-auto text-left md:text-center">
           Two systems work together: one keeps you on the smartest path, the
           other steps in as a tutor the moment you struggle - teaching from
           verified material only, never guessing.

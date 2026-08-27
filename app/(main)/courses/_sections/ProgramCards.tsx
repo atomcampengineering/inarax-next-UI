@@ -43,7 +43,7 @@ export default function ProgramCards() {
           {programs.map((program) => (
             <div
               key={program.title}
-              className="bg-surface-container-lowest border border-outline-variant p-size-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+              className="bg-surface-container-lowest border border-outline-variant p-size-md sm:p-size-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
                 <span className="inline-block bg-surface-container-highest text-on-surface-variant px-size-sm py-size-xs rounded font-label-md text-[12px] mb-size-md uppercase tracking-wider">

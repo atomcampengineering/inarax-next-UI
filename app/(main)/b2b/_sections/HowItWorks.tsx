@@ -48,18 +48,32 @@ export default function HowItWorks() {
             <Reveal key={step.title} delayMs={index * 100}>
               <AccordionItem
                 cardClassName="glass-card rounded-2xl overflow-hidden"
-                buttonClassName="w-full flex items-center justify-between p-8 text-left focus:outline-none"
-                contentClassName="bg-white/50 px-8"
+                buttonClassName="w-full flex items-center justify-between p-5 sm:p-8 text-left focus:outline-none"
+                contentClassName="bg-white/50 px-5 sm:px-8"
                 chevronClassName="material-symbols-outlined transition-transform text-primary text-3xl"
                 trigger={
+                  // Mobile: the icon sits inline with the "STEP 0x" label only, so the title/summary
+                  // column starts flush left instead of being pushed right by a full-height icon
+                  // column. Tablet/laptop keep the original icon-beside-everything layout — achieved
+                  // by rendering the icon twice and toggling which one is visible per breakpoint,
+                  // since the two layouts need the icon in different positions in the flex flow.
+                  // The `!` (important) is required because Google's Material Symbols stylesheet
+                  // ships its own `.material-symbols-outlined { display: inline-block }` rule at the
+                  // same specificity as Tailwind's hidden/md:hidden utilities, and loads later in the
+                  // cascade — without `!`, that external rule silently wins and both icons show at once.
                   <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-primary text-3xl">
+                    <span className="material-symbols-outlined text-primary text-3xl !hidden md:!inline-block">
                       {step.icon}
                     </span>
                     <div>
-                      <span className="font-label-caps text-primary mb-2 block">
-                        {step.step}
-                      </span>
+                      <div className="flex items-center gap-2 mb-2 md:mb-0 md:block">
+                        <span className="material-symbols-outlined text-primary text-3xl md:!hidden">
+                          {step.icon}
+                        </span>
+                        <span className="font-label-caps text-primary md:mb-2 md:block">
+                          {step.step}
+                        </span>
+                      </div>
                       <h3 className="font-headline-sm text-headline-sm">
                         {step.title}
                       </h3>
@@ -70,9 +84,19 @@ export default function HowItWorks() {
                   </div>
                 }
               >
-                {/* The expanded content adds detail without forcing the whole section to be permanently long. */}
-                <div className="py-6 ml-12 border-t border-outline-variant/10 text-on-surface-variant">
-                  {step.detail}
+                {/* The expanded content adds detail without forcing the whole section to be permanently long.
+                    An invisible icon-sized spacer mirrors the trigger's icon+gap so this text lines up with
+                    the title/summary column above it exactly, instead of approximating the offset with a
+                    fixed margin. Hidden on mobile to match the trigger's icon also not reserving that
+                    column there (see the trigger's own comment above). */}
+                <div className="py-4 sm:py-6 flex items-start gap-4 border-t border-outline-variant/10 text-on-surface-variant">
+                  <span
+                    className="material-symbols-outlined text-3xl invisible !hidden md:!inline-block"
+                    aria-hidden="true"
+                  >
+                    {step.icon}
+                  </span>
+                  <div>{step.detail}</div>
                 </div>
               </AccordionItem>
             </Reveal>

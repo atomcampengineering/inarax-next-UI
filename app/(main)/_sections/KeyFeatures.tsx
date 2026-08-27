@@ -13,10 +13,10 @@ export default function KeyFeatures() {
     <section className="bg-white py-size-xl px-margin-mobile md:px-margin-desktop">
       <div className="max-w-[1440px] mx-auto">
         <Reveal className="flex flex-col md:flex-row items-center justify-between gap-size-lg mb-size-xl">
-          <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface md:w-1/2">
+          <h2 className="font-display-lg-mobile md:font-display-lg text-headline-lg md:text-display-lg text-on-surface md:w-1/2 text-center md:text-left whitespace-nowrap md:whitespace-normal">
             The two-door fork
           </h2>
-          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2 text-center md:text-left">
+          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2 text-left">
             Our platform combines cutting-edge AI with human oversight to
             create a learning experience that is as unique as your career
             path.
