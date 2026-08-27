@@ -52,7 +52,7 @@ export default function Hero() {
         <span className="inline-block bg-primary/10 text-primary px-base py-size-xs rounded-full font-label-md text-[12px] uppercase mb-size-md font-bold tracking-widest">
           PUBLIC CATALOG
         </span>
-        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-size-md">
+        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-size-md text-left md:text-center">
           AI programs that start where you are
         </h1>
         <p className="max-w-3xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left md:text-center">

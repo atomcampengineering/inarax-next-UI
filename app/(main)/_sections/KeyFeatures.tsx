@@ -16,7 +16,7 @@ export default function KeyFeatures() {
           <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface md:w-1/2">
             The two-door fork
           </h2>
-          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2">
+          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2 text-center md:text-left">
             Our platform combines cutting-edge AI with human oversight to
             create a learning experience that is as unique as your career
             path.

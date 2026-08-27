@@ -12,7 +12,7 @@ export default function WhyChooseInaraX() {
     <section className="py-size-xl px-margin-mobile md:px-margin-desktop bg-surface">
       <div className="max-w-[1440px] mx-auto">
         <Reveal className="text-center mb-size-xl max-w-4xl mx-auto">
-          <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md">
+          <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md text-left md:text-center">
             Why learners and teams choose inaraX
           </h2>
           <p className="text-on-surface-variant font-body-lg text-body-lg text-justify max-w-3xl mx-auto">
