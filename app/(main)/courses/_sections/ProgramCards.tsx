@@ -33,7 +33,7 @@ export default function ProgramCards() {
           <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
             Choose your AI program
           </h2>
-          <p className="max-w-2xl mx-auto text-on-surface-variant text-body-md">
+          <p className="max-w-2xl mx-auto text-on-surface-variant text-body-md text-left md:text-center">
             Two structured, level-based programs. Take a quick placement
             check, start at the right level, and move up as you master each
             stage.

@@ -13,7 +13,7 @@ export default function CommunityBlurb() {
         <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-md">
           More than a course, be part of a community
         </h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto text-left md:text-center">
           <p className="text-body-lg text-on-surface-variant mb-size-md leading-relaxed">
             Join a global network of ambitious builders and leaders. InaraX
             isn&apos;t just about static lessons; it&apos;s about the
