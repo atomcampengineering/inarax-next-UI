@@ -15,8 +15,8 @@ const checklist = [
  */
 export default function Hero() {
   return (
-    <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint">
-      <div className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
+    <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint px-margin-mobile md:px-margin-desktop">
+      <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
         <Reveal className="md:col-span-7 flex flex-col items-start gap-size-md">
           <div className="flex items-center gap-size-xs bg-surface-container-low px-size-sm py-1 rounded-full border border-outline-variant/30">
             <span className="text-label-md font-label-md text-primary tracking-widest">
