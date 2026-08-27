@@ -10,21 +10,21 @@ export default function FinalCta() {
   return (
     // Close the page on the darkest surface so the final action feels deliberate and contained.
     <section className="py-24 bg-inverse-surface text-on-primary">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <Reveal>
           <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">
             Let&apos;s talk
           </h2>
         </Reveal>
         <Reveal delayMs={100}>
-          <p className="font-body-lg text-body-lg mb-10 text-white/70 max-w-2xl mx-auto">
+          <p className="font-body-lg text-body-lg mb-10 text-white/70 max-w-2xl">
             Tell us your organization, a rough seat count, and the skills or
             outcomes you need the course to support. We&apos;ll map a
             subscription and delivery plan to match.
           </p>
         </Reveal>
         {/* Keep both actions visible on mobile by stacking them before they expand to a row on larger screens. */}
-        <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-start gap-6">
           <Link
             href="/request-consultation"
             className="inline-block w-64 sm:w-auto bg-white text-inverse-surface px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-headline-sm text-[18px] font-semibold sm:text-headline-sm transition-all hover:scale-105 active:scale-95"

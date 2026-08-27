@@ -1,5 +1,5 @@
 import Hero from "./_sections/Hero";
-import PricingCard from "./_sections/PricingCard";
+import PlansGrid from "./_sections/PlansGrid";
 import ForOrganizations from "./_sections/ForOrganizations";
 import Faq from "./_sections/Faq";
 
@@ -13,7 +13,7 @@ export default function PricingPage() {
   return (
     <>
       <Hero />
-      <PricingCard />
+      <PlansGrid />
       <ForOrganizations />
       <Faq />
     </>

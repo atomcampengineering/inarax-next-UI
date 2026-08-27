@@ -11,17 +11,16 @@ export default function FinalCta() {
   return (
     <section className="py-size-xl bg-primary-fixed border-y border-outline-variant/20">
       <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-start text-left">
           <p className="font-label-md text-label-md text-primary tracking-widest uppercase mb-size-sm font-bold">
             GET STARTED
           </p>
           <h2 className="font-headline-lg text-display-lg-mobile md:text-headline-lg text-on-primary-fixed mb-size-md">
             Ready to start learning?
           </h2>
-          <p className="max-w-2xl text-on-primary-fixed-variant mb-size-lg font-body-lg text-center">
-            Sign in to enroll in the AI for Engineers or AI for
-            Professionals program. Your personalized learning journey
-            begins today.
+          <p className="max-w-2xl text-on-primary-fixed-variant mb-size-lg font-body-lg text-left">
+            Sign in to enroll in the AI for Professionals or AI Literacy
+            program. Your personalized learning journey begins today.
           </p>
           <div className="flex flex-col sm:flex-row gap-size-md mb-size-lg">
             <button

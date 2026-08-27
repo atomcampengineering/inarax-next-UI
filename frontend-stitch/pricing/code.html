@@ -1,196 +1,118 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Plans and Pricing - InaraX</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "inverse-primary": "#b6c4ff",
-                      "on-primary-fixed-variant": "#003ab3",
-                      "secondary-container": "#e5e2e1",
-                      "primary": "#003cb9",
-                      "outline-variant": "#c3c5d8",
-                      "background": "#f8faf9",
-                      "primary-fixed-dim": "#b6c4ff",
-                      "tertiary-fixed-dim": "#efc200",
-                      "on-tertiary-fixed-variant": "#574500",
-                      "primary-container": "#0050ef",
-                      "surface-container": "#eceeee",
-                      "on-error": "#ffffff",
-                      "surface-dim": "#d8dada",
-                      "on-tertiary-fixed": "#231b00",
-                      "surface-tint": "#004ee9",
-                      "inverse-on-surface": "#eff1f1",
-                      "surface-container-highest": "#e1e3e3",
-                      "inverse-surface": "#2e3131",
-                      "on-secondary-fixed-variant": "#474646",
-                      "outline": "#737687",
-                      "on-secondary-container": "#656464",
-                      "error-container": "#ffdad6",
-                      "error": "#ba1a1a",
-                      "surface-variant": "#e1e3e3",
-                      "on-primary": "#ffffff",
-                      "on-surface-variant": "#434656",
-                      "surface": "#f8faf9",
-                      "secondary-fixed-dim": "#c8c6c5",
-                      "on-secondary": "#ffffff",
-                      "on-secondary-fixed": "#1c1b1b",
-                      "surface-bright": "#f8faf9",
-                      "surface-container-low": "#f2f4f4",
-                      "on-background": "#191c1c",
-                      "on-error-container": "#93000a",
-                      "primary-fixed": "#dce1ff",
-                      "on-tertiary-container": "#4e3e00",
-                      "tertiary-fixed": "#ffe084",
-                      "on-primary-fixed": "#001550",
-                      "tertiary": "#735c00",
-                      "on-surface": "#191c1c",
-                      "secondary-fixed": "#e5e2e1",
-                      "secondary": "#5f5e5e",
-                      "surface-container-high": "#e7e8e8",
-                      "tertiary-container": "#cea700",
-                      "on-primary-container": "#d5dbff",
-                      "surface-container-lowest": "#ffffff",
-                      "on-tertiary": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "base": "8px",
-                      "xs": "4px",
-                      "margin-desktop": "64px",
-                      "margin-mobile": "16px",
-                      "lg": "48px",
-                      "xl": "80px",
-                      "md": "24px",
-                      "gutter": "24px",
-                      "sm": "12px"
-              },
-              "fontFamily": {
-                      "headline-md": [
-                              "Space Grotesk"
-                      ],
-                      "label-md": [
-                              "Open Sans"
-                      ],
-                      "body-md": [
-                              "Open Sans"
-                      ],
-                      "body-lg": [
-                              "Open Sans"
-                      ],
-                      "display-lg-mobile": [
-                              "Space Grotesk"
-                      ],
-                      "headline-lg": [
-                              "Space Grotesk"
-                      ],
-                      "display-lg": [
-                              "Space Grotesk"
-                      ]
-              },
-              "fontSize": {
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "display-lg-mobile": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "display-lg": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ]
-              }
-      },
-          },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-high": "#e7e8e8",
+                        "on-secondary-fixed-variant": "#474646",
+                        "secondary-container": "#e5e2e1",
+                        "surface-tint": "#004ee9",
+                        "outline-variant": "#c3c5d8",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "inverse-surface": "#2e3131",
+                        "primary": "#003cb9",
+                        "surface-container-low": "#f2f4f4",
+                        "tertiary-fixed": "#ffe084",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-tertiary-fixed": "#231b00",
+                        "on-primary-fixed": "#001550",
+                        "secondary": "#5f5e5e",
+                        "inverse-on-surface": "#eff1f1",
+                        "surface-container-highest": "#e1e3e3",
+                        "outline": "#737687",
+                        "primary-container": "#0050ef",
+                        "tertiary-fixed-dim": "#efc200",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e1e3e3",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#434656",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceeee",
+                        "on-background": "#191c1c",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#656464",
+                        "surface-dim": "#d8dada",
+                        "surface": "#f8faf9",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-bright": "#f8faf9",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#d5dbff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1c",
+                        "tertiary": "#735c00",
+                        "tertiary-container": "#cea700",
+                        "on-tertiary-container": "#4e3e00",
+                        "background": "#f8faf9",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "body-md": ["Open Sans"],
+                        "label-md": ["Open Sans"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-lg": ["Open Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
         }
     </script>
 <style>
-        .blueprint-lines {
-            background-image: 
-                linear-gradient(to right, rgba(115, 118, 135, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(115, 118, 135, 0.08) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
-        .soft-glow-shadow {
-            box-shadow: 0 4px 24px rgba(0, 80, 239, 0.15);
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
         .soft-glow-shadow:hover {
-            box-shadow: 0 8px 32px rgba(0, 80, 239, 0.25);
+            box-shadow: 0 0 20px rgba(0, 80, 239, 0.4);
         }
-        .ambient-shadow {
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        }
-        .fade-up {
-            opacity: 0;
-            transform: translateY(24px);
-            animation: fadeUpAnim 0.6s ease-out forwards;
-        }
-        @keyframes fadeUpAnim {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-[80px]">
 <!-- TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-base max-w-full mx-auto bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
 <div class="flex items-center gap-md"><img alt="InaraX Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLOHzC1r1Oc4J1980rUoxcGv427JMMGhFqSbr5nh21z0Ij78P-nMdMuCQglUcrfB8y1vCLtSQLV9Bu7LaYlzPu3543I2c-AJ0mJrow7gARBqnElScqMuNHMf3X8FDPeGdzIUWTB1AjCXJxs3izaFwag7Ti1fR0gBXdbaCt78ZGVv6bOliKfi3kf_Kp-mXviMqIB4bSEL_zyvGXN266UbmCTGsyn_Wy1PVVM2WmgQ8WtY-V6Y0Que8K3taSoqzDvHqmGk2xNae87Q"></div>
@@ -204,190 +126,73 @@
 <button class="bg-primary-container text-on-primary px-md py-base rounded-full text-label-md font-label-md soft-glow-shadow transition-transform active:scale-95">Get started</button>
 </div>
 </nav>
-<!-- Main Content -->
-<main class="flex-grow pt-xl mt-lg relative">
-<div class="absolute inset-0 blueprint-lines pointer-events-none -z-10"></div>
+<main class="flex-grow relative grid-bg">
 <!-- Hero Section -->
-<section class="px-margin-desktop py-xl text-center max-w-4xl mx-auto fade-up">
-<h1 class="text-display-lg-mobile md:text-display-lg font-headline-md mb-md tracking-tight text-on-surface">Plans and pricing</h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Buy a single course for one payment, or get inaraX Plus for the full library, live sessions, and community. Cancel anytime.</p>
+<section class="px-margin-mobile md:px-margin-desktop py-xl flex flex-col items-center text-center relative overflow-hidden">
+<div class="max-w-3xl mb-lg relative z-10">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg mb-md text-on-surface">Plans and Pricing</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">inaraX is your learning companion for life. We want learners to feel confident about their AI skills in this increasingly demanding industry globally. For this, we have priced the entire platform at USD 7 till 31st December 2026.</p>
+</div>
+<!-- Featured Pricing Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg max-w-2xl w-full text-left relative z-10 shadow-[0_4px_24px_rgba(0,0,0,0.06)] overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary px-4 py-1 rounded-bl-xl text-label-md font-label-md">Limited Time Offer</div>
+<h2 class="text-headline-lg font-headline-lg mb-xs">AI for Professionals</h2>
+<div class="flex items-baseline gap-2 mb-md">
+<span class="text-display-lg font-display-lg text-primary">$7</span>
+<span class="text-body-md font-body-md text-on-surface-variant">/ one-time payment</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-lg">
+                    The learners will obtain the entire platform access by purchasing the "AI for Professional" course for the entire year of 2026. So get started with your learning journey with inaraX and avail this opportunity!
+                </p>
+<button class="w-full bg-primary-container text-on-primary text-label-md font-label-md py-4 rounded-lg hover:bg-primary-container/90 transition-all soft-glow-shadow mb-sm">
+                    Get started with your learning journey
+                </button>
+<p class="text-center text-xs text-on-surface-variant mt-2">*Purchase grants full platform access until Dec 31, 2026</p>
+</div>
 </section>
-<!-- Plans Section -->
-<section class="px-margin-desktop py-lg max-w-7xl mx-auto">
-<div class="text-center mb-xl fade-up delay-100">
-<h2 class="text-headline-lg font-headline-lg text-on-background mb-sm">Choose your plan</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Want one specific course? Buy it once. Want everything, plus live sessions and community? Get Plus.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Plan 1 -->
-<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-lg flex flex-col relative ambient-shadow fade-up delay-100 hover:-translate-y-1 transition-transform duration-300">
-<div class="mb-lg flex-grow">
-<h3 class="text-headline-md font-headline-md text-on-background mb-xs">Single course</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md h-12">One course, one payment.</p>
-<div class="mb-sm">
-<span class="text-headline-lg font-headline-lg text-primary">$25</span>
-<span class="text-label-md font-label-md text-on-surface-variant">per level</span>
-</div>
-<p class="text-label-md font-label-md text-outline mb-lg">Yours for as long as the course is offered on inaraX.</p>
-<div class="space-y-sm">
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">One-time purchase</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Certificate included</span>
-</div>
-</div>
-</div>
-<div>
-<div class="p-sm bg-surface-container-low rounded-lg mb-md">
-<p class="text-label-md font-label-md text-on-surface-variant"><span class="font-bold text-on-background">Best for:</span> Learners who want a single, specific course.</p>
-</div>
-<a class="block w-full text-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary px-md py-sm rounded-full text-label-md font-label-md transition-all duration-300" href="#">Browse catalog</a>
-</div>
-</div>
-<!-- Plan 2 -->
-<div class="bg-surface-container-lowest border-2 border-primary rounded-xl p-lg flex flex-col relative ambient-shadow fade-up delay-200 hover:-translate-y-1 transition-transform duration-300">
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-sm py-xs rounded-full text-[10px] font-bold tracking-wider uppercase">
-                        POPULAR
-                    </div>
-<div class="mb-lg flex-grow">
-<h3 class="text-headline-md font-headline-md text-on-background mb-xs">inaraX Plus, Quarterly</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md h-12">Full library, billed every 3 months.</p>
-<div class="mb-sm">
-<span class="text-headline-lg font-headline-lg text-primary">$45</span>
-<span class="text-label-md font-label-md text-on-surface-variant">/quarter</span>
-</div>
-<p class="text-label-md font-label-md text-outline mb-lg">One charge · cancel anytime</p>
-<div class="space-y-sm">
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Entire catalog while subscribed</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Weekly live sessions</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Community &amp; mentoring</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Unlimited certificates</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Guided learning programs</span>
-</div>
-</div>
-</div>
-<div>
-<div class="p-sm bg-surface-container-low rounded-lg mb-md">
-<p class="text-label-md font-label-md text-on-surface-variant"><span class="font-bold text-on-background">Best for:</span> Learners who want everything and to stay current.</p>
-</div>
-<a class="block w-full text-center bg-primary-container text-on-primary hover:bg-primary-container/90 px-md py-sm rounded-full text-label-md font-label-md transition-all duration-300 soft-glow-shadow" href="#">Get Plus</a>
-</div>
-</div>
-<!-- Plan 3 -->
-<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-lg flex flex-col relative ambient-shadow fade-up delay-300 hover:-translate-y-1 transition-transform duration-300">
-<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-tertiary-container text-on-tertiary-container px-sm py-xs rounded-full text-[10px] font-bold tracking-wider uppercase whitespace-nowrap">
-                        Save $80 (44%) vs quarterly
-                    </div>
-<div class="mb-lg flex-grow">
-<h3 class="text-headline-md font-headline-md text-on-background mb-xs">inaraX Plus, Yearly</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md h-12">Best value - one payment for the whole year.</p>
-<div class="mb-sm">
-<span class="text-headline-lg font-headline-lg text-primary">$100</span>
-<span class="text-label-md font-label-md text-on-surface-variant">/year</span>
-</div>
-<p class="text-label-md font-label-md text-outline mb-lg">One charge · cancel anytime</p>
-<div class="space-y-sm">
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">add_circle</span>
-<span class="text-body-md font-body-md text-on-background font-bold">Everything in Quarterly</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">Save $80 a year (44%)</span>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-<span class="text-body-md font-body-md text-on-background">One bill for the year</span>
-</div>
-</div>
-</div>
-<div>
-<div class="p-sm bg-surface-container-low rounded-lg mb-md">
-<p class="text-label-md font-label-md text-on-surface-variant"><span class="font-bold text-on-background">Best for:</span> Committed learners who want the lowest price.</p>
-</div>
-<a class="block w-full text-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary px-md py-sm rounded-full text-label-md font-label-md transition-all duration-300" href="#">Get Plus</a>
-</div>
-</div>
-</div>
 <!-- Trust Strip -->
-<div class="flex justify-center items-center gap-md mt-lg text-label-md font-label-md text-outline fade-up delay-300">
-<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">verified_user</span> Cancel anytime</div>
-<div class="w-1 h-1 rounded-full bg-outline/50"></div>
-<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">lock</span> Secure checkout</div>
-<div class="w-1 h-1 rounded-full bg-outline/50"></div>
-<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]">architecture</span> Built by Atomcamp Arabia</div>
-</div>
+<section class="border-y border-outline-variant/30 bg-surface-container-low py-md px-margin-mobile md:px-margin-desktop flex justify-center items-center gap-gutter text-on-surface-variant text-label-md font-label-md flex-wrap">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">cancel</span> Cancel anytime
+            </div>
+<span class="hidden md:block">•</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">lock</span> Secure checkout
+            </div>
+<span class="hidden md:block">•</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">build</span> Built by Atomcamp Arabia
+            </div>
 </section>
-<!-- For Organizations Section -->
-<section class="my-xl mx-margin-desktop fade-up">
-<div class="bg-surface-container rounded-2xl p-xl flex flex-col md:flex-row items-center justify-between gap-lg relative overflow-hidden">
-<div class="absolute inset-0 opacity-10 bg-gradient-to-br from-primary to-transparent"></div>
-<div class="relative z-10 max-w-2xl">
-<h2 class="text-headline-lg font-headline-lg text-on-background mb-sm">Training a team?</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant">Give every employee a path personalized to their role and level, with content built around your goals and progress your L&amp;D team can track.</p>
+<!-- B2B Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl">
+<div class="bg-surface-container-low rounded-xl p-lg flex flex-col md:flex-row items-center gap-lg border border-outline-variant/30">
+<div class="flex-1">
+<h2 class="text-headline-lg font-headline-lg mb-md">Training a team?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-md">Give every employee a path personalized to their role and level, with content built around your goals and progress your L&amp;D team can track.</p>
+<button class="border border-outline text-on-surface text-label-md font-label-md px-6 py-3 rounded-lg hover:border-primary hover:text-primary transition-colors flex items-center gap-2">
+                        Request a consultation <span class="material-symbols-outlined">arrow_forward</span>
+</button>
 </div>
-<div class="relative z-10 shrink-0">
-<a class="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-primary/5 px-lg py-sm rounded-full text-label-md font-label-md transition-all duration-300" href="/b2b">
-                        Request a consultation
-                        <span class="material-symbols-outlined ml-xs text-[18px]">arrow_forward</span>
-</a>
+<div class="flex-1 w-full relative h-[300px] rounded-lg overflow-hidden border border-outline-variant/30">
+<div class="bg-cover bg-center w-full h-full" data-alt="A modern, high-tech corporate training environment with professionals collaborating around a glowing digital display. Clean, minimalist aesthetic with bright white lighting, cool corporate blues, and deep blacks. The mood is focused, collaborative, and technologically advanced, reflecting high-end B2B professional development." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAM55ZgbE8NL5Nshc5471acAHoVROqkS4SRzAP21lDgZjtsKP96l2cLMcmZ7Qq_GLwytBnp5F89Q0cnQ9zmzZLNXxVXkOg824awocYFVaIY9rEAgA2BBlb9mOpzMosZB3Iw1ppkLF_Zht35OkhyImOsYWKWaPogmp1N_eEZrdc05MSTYl2s6EjeoRpOB4rwj_urEF0N2QaGjUB740mSCJ4ehji7qAaCej60rNy1TYcjhkeK-XaRNRaO&quot;);"></div>
 </div>
 </div>
 </section>
 <!-- FAQ Section -->
-<section class="px-margin-desktop py-xl max-w-4xl mx-auto fade-up">
-<div class="text-center mb-lg">
-<h2 class="text-headline-lg font-headline-lg text-on-background mb-sm">Frequently asked questions</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Answers about inaraX plans, billing, and course purchases.</p>
-</div>
-<div class="space-y-sm">
+<section class="px-margin-mobile md:px-margin-desktop py-xl bg-surface">
+<h2 class="text-headline-lg font-headline-lg mb-lg text-center">Frequently Asked Questions</h2>
+<div class="max-w-3xl mx-auto flex flex-col gap-sm">
 <!-- FAQ Item 1 -->
-<details class="group border-b border-outline-variant/30 pb-sm cursor-pointer">
-<summary class="flex justify-between items-center font-headline-md text-headline-md text-on-background py-sm list-none">
-                        Can I switch between plans later?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<div class="text-body-md font-body-md text-on-surface-variant pb-md mt-xs">
-                        Yes, you can upgrade from Quarterly to Yearly at any time. The remaining balance on your current quarter will be prorated towards your new yearly subscription.
-                    </div>
-</details>
+<div class="border border-outline-variant/30 rounded-lg bg-surface-container-lowest p-md">
+<h3 class="text-headline-md font-headline-md mb-xs">Does the $7 include all courses?</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Yes, purchasing the "AI for Professionals" course at the promotional rate grants you full platform access to all current and future courses until December 31st, 2026.</p>
+</div>
 <!-- FAQ Item 2 -->
-<details class="group border-b border-outline-variant/30 pb-sm cursor-pointer">
-<summary class="flex justify-between items-center font-headline-md text-headline-md text-on-background py-sm list-none">
-                        What happens to my certificates if I cancel Plus?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<div class="text-body-md font-body-md text-on-surface-variant pb-md mt-xs">
-                        You keep any certificates you have already earned forever. They will remain accessible on your profile and can be shared. However, you will lose access to course materials you haven't completed or purchased individually.
-                    </div>
-</details>
-<!-- FAQ Item 3 -->
-<details class="group border-b border-outline-variant/30 pb-sm cursor-pointer">
-<summary class="flex justify-between items-center font-headline-md text-headline-md text-on-background py-sm list-none">
-                        Are there refunds for single courses?
-                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-</summary>
-<div class="text-body-md font-body-md text-on-surface-variant pb-md mt-xs">
-                        We offer a 14-day money-back guarantee on single course purchases, provided you have not completed more than 30% of the course material.
-                    </div>
-</details>
+<div class="border border-outline-variant/30 rounded-lg bg-surface-container-lowest p-md">
+<h3 class="text-headline-md font-headline-md mb-xs">What happens after December 31st, 2026?</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">After the promotional period ends, your account will transition to a standard subscription plan. We will notify you well in advance of any pricing changes.</p>
+</div>
 </div>
 </section>
 </main>
@@ -422,8 +227,6 @@
 <p class="text-on-surface-variant font-label-md text-label-md">© 2024 InaraX AI. All rights reserved.</p>
 </div>
 </footer>
-
-
 
 
 </body></html>

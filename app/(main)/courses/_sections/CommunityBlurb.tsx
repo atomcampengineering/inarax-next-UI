@@ -9,11 +9,11 @@ import Reveal from "@/components/ui/Reveal";
 export default function CommunityBlurb() {
   return (
     <section className="py-size-xl border-t border-outline-variant/20">
-      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-md text-left md:text-center">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-md text-left">
           More than a course, be part of a community
         </h2>
-        <div className="max-w-4xl mx-auto text-left md:text-center">
+        <div className="max-w-4xl text-left">
           <p className="text-body-lg text-on-surface-variant mb-size-md leading-relaxed">
             Join a global network of ambitious builders and leaders. InaraX
             isn&apos;t just about static lessons; it&apos;s about the

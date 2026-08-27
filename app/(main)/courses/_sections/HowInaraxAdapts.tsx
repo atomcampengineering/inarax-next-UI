@@ -12,7 +12,7 @@ export default function HowInaraxAdapts() {
   return (
     <section className="py-size-xl relative overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <Reveal className="text-center mb-size-xl">
+        <Reveal className="mb-size-xl">
           <span className="inline-block font-label-md text-label-md text-primary tracking-[0.2em] mb-size-sm uppercase">
             ADAPTIVE TECHNOLOGY
           </span>
