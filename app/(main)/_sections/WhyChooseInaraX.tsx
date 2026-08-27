@@ -11,11 +11,11 @@ export default function WhyChooseInaraX() {
   return (
     <section className="py-size-xl px-margin-mobile md:px-margin-desktop bg-surface">
       <div className="max-w-[1440px] mx-auto">
-        <Reveal className="mb-size-xl max-w-4xl">
-          <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md text-left">
+        <Reveal className="mb-size-xl">
+          <h2 className="font-headline-lg text-headline-lg md:text-display-lg text-on-surface mb-size-md text-left md:whitespace-nowrap">
             Why learners and teams choose inaraX
           </h2>
-          <p className="text-on-surface-variant font-body-lg text-body-lg text-justify max-w-3xl">
+          <p className="text-on-surface-variant font-body-lg text-body-lg text-justify">
             Experience a learning platform designed for the modern
             professional. InaraX combines adaptive AI with human expertise
             to ensure your skills stay sharp, relevant, and verified in an
