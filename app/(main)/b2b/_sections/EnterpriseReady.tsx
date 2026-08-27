@@ -42,7 +42,7 @@ export default function EnterpriseReady() {
   return (
     // Return to the base surface so the feature grid feels like a supporting proof section.
     <section className="py-24 bg-surface">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
           Built for how organizations work
         </h2>

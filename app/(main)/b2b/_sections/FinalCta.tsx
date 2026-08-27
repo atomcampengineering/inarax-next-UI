@@ -10,7 +10,7 @@ export default function FinalCta() {
   return (
     // Close the page on the darkest surface so the final action feels deliberate and contained.
     <section className="py-24 bg-inverse-surface text-on-primary">
-      <div className="max-w-container-max mx-auto px-margin-desktop text-center">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
         <Reveal>
           <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">
             Let&apos;s talk
@@ -27,13 +27,13 @@ export default function FinalCta() {
         <Reveal delayMs={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             href="/request-consultation"
-            className="inline-block w-full sm:w-auto bg-white text-inverse-surface px-10 py-4 rounded-xl font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95"
+            className="inline-block w-64 sm:w-auto bg-white text-inverse-surface px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-headline-sm text-[18px] font-semibold sm:text-headline-sm transition-all hover:scale-105 active:scale-95"
           >
             Request a consultation
           </Link>
           <Link
             href="/courses"
-            className="inline-block w-full sm:w-auto border border-white/20 text-white px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:bg-white/10 transition-all active:scale-95"
+            className="inline-block w-64 sm:w-auto border border-white/20 text-white px-6 py-3 sm:px-10 sm:py-4 rounded-xl font-headline-sm text-[18px] font-semibold sm:text-headline-sm hover:bg-white/10 transition-all active:scale-95"
           >
             Browse courses
           </Link>

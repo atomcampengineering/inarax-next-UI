@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-size-md sm:gap-size-lg">
             <button
               type="button"
-              className="bg-primary-container text-on-primary px-size-xl py-size-md rounded-lg font-headline-md text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95"
+              className="bg-primary-container text-on-primary px-size-lg py-size-sm sm:px-size-xl sm:py-size-md rounded-lg font-headline-md text-headline-sm sm:text-headline-md primary-cta-glow transition-all hover:-translate-y-0.5 active:scale-95"
             >
               Start Learning Now
             </button>

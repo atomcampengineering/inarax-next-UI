@@ -77,7 +77,7 @@ export default function Faq() {
               buttonClassName="w-full flex justify-between items-center p-size-md text-left focus:outline-none"
               contentClassName="px-size-md"
               trigger={
-                <span className="font-headline-md text-headline-md">
+                <span className="font-headline-md text-headline-sm sm:text-headline-md">
                   {faq.question}
                 </span>
               }

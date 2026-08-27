@@ -13,23 +13,23 @@ export default function KeyFeatures() {
     <section className="bg-white py-size-xl px-margin-mobile md:px-margin-desktop">
       <div className="max-w-[1440px] mx-auto">
         <Reveal className="flex flex-col md:flex-row items-center justify-between gap-size-lg mb-size-xl">
-          <h2 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface md:w-1/2">
+          <h2 className="font-display-lg-mobile md:font-display-lg text-headline-lg md:text-display-lg text-on-surface md:w-1/2 text-center md:text-left whitespace-nowrap md:whitespace-normal">
             The two-door fork
           </h2>
-          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2">
+          <p className="text-on-surface-variant text-body-lg font-body-lg md:w-1/2 text-left">
             Our platform combines cutting-edge AI with human oversight to
             create a learning experience that is as unique as your career
             path.
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-[1000px]:grid-cols-3 gap-gutter">
           <Reveal className="p-size-md sm:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">
                 rocket_launch
               </span>
             </div>
-            <h3 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-size-sm">
               For individuals
             </h3>
             <p className="text-on-surface-variant text-body-lg font-body-lg mb-size-md">
@@ -45,7 +45,7 @@ export default function KeyFeatures() {
           </Reveal>
           <Reveal
             delayMs={100}
-            className="relative rounded-xl overflow-hidden border border-outline-variant/30"
+            className="hidden min-[1000px]:block relative rounded-xl overflow-hidden border border-outline-variant/30"
           >
             <Image
               alt="Futuristic workspace illustration"
@@ -64,7 +64,7 @@ export default function KeyFeatures() {
                 psychology
               </span>
             </div>
-            <h3 className="font-headline-lg text-headline-lg text-on-surface mb-size-sm">
+            <h3 className="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-size-sm">
               For organizations
             </h3>
             <p className="text-on-surface-variant text-body-lg font-body-lg mb-size-md">

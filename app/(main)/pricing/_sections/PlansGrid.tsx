@@ -97,7 +97,7 @@ const trustStrip = [
  */
 export default function PlansGrid() {
   return (
-    <section className="py-size-lg px-margin-desktop max-w-container-max mx-auto">
+    <section className="py-size-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
       <Reveal className="text-center mb-size-xl">
         <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm">
           Choose your plan
@@ -107,7 +107,7 @@ export default function PlansGrid() {
           sessions and community? Get Plus.
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      <div className="grid grid-cols-1 min-[900px]:grid-cols-3 gap-gutter">
         {plans.map((plan, index) => (
           <Reveal
             key={plan.name}

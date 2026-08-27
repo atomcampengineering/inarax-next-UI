@@ -9,8 +9,8 @@ import Reveal from "@/components/ui/Reveal";
 export default function CommunityBlurb() {
   return (
     <section className="py-size-xl border-t border-outline-variant/20">
-      <Reveal className="max-w-container-max mx-auto px-margin-desktop text-center">
-        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-md">
+      <Reveal className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-size-md text-left md:text-center">
           More than a course, be part of a community
         </h2>
         <div className="max-w-4xl mx-auto text-left md:text-center">

@@ -43,7 +43,7 @@ export default function EcosystemFeatures() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="p-size-lg border border-outline-variant/30 rounded-lg hover:border-primary/50 transition-colors bg-surface-container-lowest shadow-sm"
+            className="p-size-lg border border-outline-variant/30 rounded-lg hover:border-primary/50 transition-colors bg-surface-container-lowest shadow-sm text-center sm:text-left"
           >
             <span
               className="material-symbols-outlined text-primary mb-size-md"
