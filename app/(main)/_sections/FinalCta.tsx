@@ -14,15 +14,15 @@ export default function FinalCta() {
         <h2 className="text-white font-display-lg text-headline-lg mb-size-lg">
           Start learning with inaraX
         </h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-size-md">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-size-md">
           <button
             type="button"
-            className="bg-primary-container text-on-primary font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95"
+            className="w-64 sm:w-auto bg-primary-container text-on-primary font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg primary-cta-glow transition-all hover:scale-105 active:scale-95"
           >
             Get started
           </button>
           <Link
-            className="border border-white/20 text-white font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg hover:bg-white/5 transition-all"
+            className="w-64 sm:w-auto border border-white/20 text-white font-headline-md text-headline-sm sm:text-headline-md text-center px-size-sm sm:px-size-xl py-size-sm sm:py-size-md rounded-lg hover:bg-white/5 transition-all"
             href="/b2b"
           >
             For organizations →
