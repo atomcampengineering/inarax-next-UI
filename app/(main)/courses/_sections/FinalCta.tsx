@@ -19,9 +19,8 @@ export default function FinalCta() {
             Ready to start learning?
           </h2>
           <p className="max-w-2xl text-on-primary-fixed-variant mb-size-lg font-body-lg text-left md:text-center">
-            Sign in to enroll in the AI for Engineers or AI for
-            Professionals program. Your personalized learning journey
-            begins today.
+            Sign in to enroll in the AI for Professionals or AI Literacy
+            program. Your personalized learning journey begins today.
           </p>
           <div className="flex flex-col sm:flex-row gap-size-md mb-size-lg">
             <button

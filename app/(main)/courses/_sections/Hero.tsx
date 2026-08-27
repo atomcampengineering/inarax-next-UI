@@ -58,8 +58,8 @@ export default function Hero() {
         <p className="max-w-3xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left md:text-center">
           Take a quick placement check and inaraX builds a path around your
           level, your field, and your goal — so you&apos;re never stuck
-          relearning what you already know. Choose AI for Engineers or AI
-          for Professionals.
+          relearning what you already know. Choose AI for Professionals or
+          AI Literacy.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-size-md mb-size-xl">
           <Link
