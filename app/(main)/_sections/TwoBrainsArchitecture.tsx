@@ -19,9 +19,9 @@ export default function TwoBrainsArchitecture() {
           verified material only, never guessing.
         </p>
       </Reveal>
-      <Reveal className="mt-size-xl bg-inarax-black rounded-2xl p-size-lg grid grid-cols-1 md:grid-cols-2 gap-size-lg border border-white/5">
-        <div className="p-size-md">
-          <div className="flex items-center gap-size-sm mb-size-sm text-primary">
+      <Reveal className="mt-size-xl bg-inarax-black rounded-2xl p-size-sm sm:p-size-lg grid grid-cols-1 md:grid-cols-2 gap-size-lg border border-white/5">
+        <div className="p-size-sm sm:p-size-md">
+          <div className="flex flex-col items-start gap-size-sm mb-size-sm text-primary">
             <span className="material-symbols-outlined">bolt</span>
             <h4 className="font-headline-md text-headline-md text-white">
               Fast Brain — the router
@@ -32,8 +32,8 @@ export default function TwoBrainsArchitecture() {
             for rapid progress.
           </p>
         </div>
-        <div className="p-size-md">
-          <div className="flex items-center gap-size-sm mb-size-sm text-primary">
+        <div className="p-size-sm sm:p-size-md">
+          <div className="flex flex-col items-start gap-size-sm mb-size-sm text-primary">
             <span className="material-symbols-outlined">verified_user</span>
             <h4 className="font-headline-md text-headline-md text-white">
               Deep Brain — the tutor

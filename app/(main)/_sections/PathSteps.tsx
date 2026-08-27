@@ -56,7 +56,7 @@ export default function PathSteps() {
             />
           </div>
           <div className="p-size-md">
-            <div className="flex items-center gap-base mb-base">
+            <div className="flex flex-col gap-base mb-base">
               <span className="text-primary font-headline-md">
                 {step.number}
               </span>
@@ -64,7 +64,7 @@ export default function PathSteps() {
                 {step.title}
               </h4>
             </div>
-            <p className="font-body-md text-body-md text-on-surface-variant">
+            <p className="font-body-md text-body-md text-on-surface-variant text-justify">
               {step.summary}
             </p>
           </div>
