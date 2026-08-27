@@ -17,7 +17,7 @@ export default function FinalCta() {
           </h2>
         </Reveal>
         <Reveal delayMs={100}>
-          <p className="font-body-lg text-body-lg mb-10 text-white/70 max-w-2xl">
+          <p className="font-body-lg text-body-lg mb-10 text-white/70">
             Tell us your organization, a rough seat count, and the skills or
             outcomes you need the course to support. We&apos;ll map a
             subscription and delivery plan to match.

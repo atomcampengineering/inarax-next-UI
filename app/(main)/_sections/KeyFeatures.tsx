@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 
@@ -47,12 +46,15 @@ export default function KeyFeatures() {
             delayMs={100}
             className="relative rounded-xl overflow-hidden border border-outline-variant/30"
           >
-            <Image
-              alt="Futuristic workspace illustration"
-              className="object-cover"
-              src="https://lh3.googleusercontent.com/aida/AP1WRLvBlE9Y2-TW_h_2Ari9xz6lhfVffmEPdPcS0bJnER-LFKsasImvxwustryLhFaNZqKJDI7jqv_rl9XPwY2vxiVEP3QSG7ai9rrQxA6ElOXtSJNHmfN_Bxz4RxFo-2_oP15lT-UyephghO_qAL0I8Qk2OjLb2elEA_Djl5qdx8vlmZkG9UJZP3GHjW3ItIG56I8uMr4GpcXuIzGBzF21amDAkQORfR4C71Uz6pGkfD0WS5NNvNcrl9e8fgo"
-              fill
-              sizes="(min-width: 768px) 33vw, 100vw"
+            {/* h-full (not aspect-video) so this fills the grid row's stretched height to match
+                the flanking cards, instead of being capped at a 16:9 ratio and leaving a gap. */}
+            <video
+              className="w-full h-full object-cover"
+              src="/videos/two-door-fork.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </Reveal>
           <Reveal

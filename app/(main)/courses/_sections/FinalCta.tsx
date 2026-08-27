@@ -18,7 +18,7 @@ export default function FinalCta() {
           <h2 className="font-headline-lg text-display-lg-mobile md:text-headline-lg text-on-primary-fixed mb-size-md">
             Ready to start learning?
           </h2>
-          <p className="max-w-2xl text-on-primary-fixed-variant mb-size-lg font-body-lg text-left">
+          <p className="text-on-primary-fixed-variant mb-size-lg font-body-lg text-left">
             Sign in to enroll in the AI for Professionals or AI Literacy
             program. Your personalized learning journey begins today.
           </p>

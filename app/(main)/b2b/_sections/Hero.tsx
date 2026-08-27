@@ -11,14 +11,19 @@ export default function Hero() {
   return (
     // White background, matching the home and courses page heroes for a consistent look site-wide.
     <section className="relative overflow-hidden py-24 bg-white">
-      {/* Build the headline and illustration as a two-column composition on larger screens. */}
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <Reveal>
-          
+      {/* Build the headline and illustration as a two-column composition on larger screens.
+          Switches at a custom 990px breakpoint (later than Tailwind's default md/768px) — that's
+          about where there's enough room per column for the heading not to feel cramped. */}
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 min-[990px]:grid-cols-2 gap-12 items-center">
+        {/* min-w-0 overrides the grid item's default min-width: auto (its content's intrinsic
+            min-content size — here, the width of the heading's longest word at 64px). Without
+            it, this column refuses to shrink past that width and the heading overflows sideways
+            into the image column once the track gets narrower than that, instead of wrapping. */}
+        <Reveal className="min-w-0">
           <span className="inline-block px-4 py-1 rounded-xl bg-primary/10 text-primary font-label-caps text-label-caps mb-6 uppercase tracking-wider">
             For organizations
           </span>
-          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight">
+          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 leading-tight break-words">
             AI training for your team, personalized to every role
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
@@ -45,7 +50,7 @@ export default function Hero() {
               className="w-full h-full object-cover rounded-xl shadow-inner"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyF_-7GGOVIUPtgQdYByVdICxiJnePk4kFcXpH9HhJnhmKohoAKHLHmXHBusICXXsOfAY8aR_OzGY628QxZq1eyWrJh2fRmwVtx5pGogOfa8sTSgOF99beBAxiQQJc_k8wVLTZrtVigzzQueIE54tQMU2TG4WuIBhNTbY-fMqdiFHRs1ZVR1vZ9CsDY1PhfhDBbNO8m0QMtO3rgs6Opr3419G87tBwmOccwyoaB8kAi51lNaAYcN3XoisaouT3bh6RtL_ol2h9aZg"
               fill
-              sizes="(min-width: 768px) 40vw, 90vw"
+              sizes="(min-width: 990px) 40vw, 90vw"
               priority
             />
           </div>
