@@ -102,7 +102,7 @@ export default function PlansGrid() {
         <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm">
           Choose your plan
         </h2>
-        <p className="text-body-md font-body-md text-on-surface-variant">
+        <p className="text-body-md font-body-md text-on-surface-variant text-left md:text-center">
           Want one specific course? Buy it once. Want everything, plus live
           sessions and community? Get Plus.
         </p>

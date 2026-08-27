@@ -8,13 +8,13 @@ import Reveal from "@/components/ui/Reveal";
  */
 export default function ForOrganizations() {
   return (
-    <Reveal className="my-size-xl mx-margin-desktop">
-      <div className="bg-surface-container rounded-2xl p-size-xl flex flex-col md:flex-row items-center justify-between gap-size-lg relative overflow-hidden">
+    <Reveal className="my-size-xl mx-margin-mobile md:mx-margin-desktop">
+      <div className="bg-surface-container rounded-2xl p-size-md sm:p-size-xl flex flex-col min-[900px]:flex-row items-center justify-between gap-size-lg relative overflow-hidden">
         {/* Faint brand-tinted gradient, matching the mockup's original composition — every
             color it references (primary, surface-container) already matches globals.css. */}
         <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-primary to-transparent" />
         <div className="relative z-10 max-w-2xl">
-          <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm">
+          <h2 className="text-headline-lg font-headline-lg text-on-background mb-size-sm text-center min-[900px]:text-left">
             Training a team?
           </h2>
           <p className="text-body-lg font-body-lg text-on-surface-variant">
