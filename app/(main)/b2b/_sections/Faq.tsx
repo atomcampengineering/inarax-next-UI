@@ -43,7 +43,7 @@ export default function Faq() {
     // The lighter container surface makes the FAQ feel like a distinct reference area.
     <section className="py-24 bg-surface-container">
       <div className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
-        <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
+        <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-left">
           Questions we hear often
         </h2>
         {/* Keep the accordion stack compact so answers stay scannable. */}

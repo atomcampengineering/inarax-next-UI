@@ -39,11 +39,14 @@ export default function HowItWorks() {
     // Reuse the neutral surface so the accordion cards provide the primary visual hierarchy.
     <section className="py-24 bg-surface">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-center">
-          How it works
-        </h2>
-        {/* Delay each card slightly to create a staggered reveal without extra choreography. */}
-        <div className="max-w-3xl mx-auto space-y-4">
+        {/* Heading shares this max-w-3xl mx-auto box with the accordion cards below it, so it
+            aligns with that container instead of the wider section padding edge. */}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display-lg text-display-lg-mobile md:text-headline-md mb-12 text-left">
+            How it works
+          </h2>
+          {/* Delay each card slightly to create a staggered reveal without extra choreography. */}
+          <div className="space-y-4">
           {steps.map((step, index) => (
             <Reveal key={step.title} delayMs={index * 100}>
               <AccordionItem
@@ -101,6 +104,7 @@ export default function HowItWorks() {
               </AccordionItem>
             </Reveal>
           ))}
+          </div>
         </div>
       </div>
     </section>

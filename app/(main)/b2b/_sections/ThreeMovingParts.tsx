@@ -10,7 +10,7 @@ export default function ThreeMovingParts() {
     // Use a softer container surface to visually separate the system diagram from the surrounding sections.
     <section className="py-24 bg-surface-container-low">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <Reveal className="text-center mb-16">
+        <Reveal className="mb-16">
           <h2 className="font-headline-md text-headline-md mb-4">
             One Subscription, Three Moving Parts
           </h2>
