@@ -29,10 +29,10 @@ export default function Navbar() {
         <div className="space-y-size-md flex">
           <Image
             alt="InaraX Logo"
-            className="w-20 h-auto object-contain"
+            className="w-32 h-auto object-contain"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8mT3Hbo_ioxofYAmD1WXUWXOwqLmTvyGkevd_DQvfH96zMa7DbE-r9Al-XOauSrOruC5u6OZd4XCy6fiSg6VdoCBr1bCOZTLySuzFEc00xVv-VHffIeIg2LNBIB2gKDvLGXaLR8znPXHEcm3IDUXfUBYDCZmXzgpsPqjxBj-OwQOfTpB4MtZNE7XzbiVRG6hZB780qunFDK44BLjwKamDOLb6sDOUcQuFTdPYuJY2fxXitSxL3-1P-1zkS7x3c-1q7zOzaCNdCos"
-            width={80}
-            height={40}
+            width={128}
+            height={64}
           />
         </div>
         <div className="hidden md:flex items-center gap-8">

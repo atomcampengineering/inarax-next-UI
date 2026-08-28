@@ -68,13 +68,16 @@ export default function ProgramCards() {
               className="bg-surface-container-lowest border border-outline-variant p-size-md sm:p-size-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
-                <span className="inline-block bg-surface-container-highest text-on-surface-variant px-size-sm py-size-xs rounded font-label-md text-[12px] mb-size-md uppercase tracking-wider">
+                {/* Badge — purple-tinted label to tie into the course card accent color. */}
+                <span className="inline-block bg-[#f3e8ff] text-[#7e22ce] px-size-sm py-size-xs rounded font-label-md text-[12px] mb-size-md uppercase tracking-wider">
                   {program.badge}
                 </span>
-                <h3 className="font-headline-md text-headline-md text-on-surface mb-size-sm">
+                {/* Title in purple to give the card a strong visual anchor. */}
+                <h3 className="font-headline-md text-headline-md text-[#6d28d9] mb-size-sm">
                   {program.title}
                 </h3>
-                <p className="font-bold text-primary mb-size-sm">
+                {/* Tagline keeps the primary-color bold treatment but shifts to purple. */}
+                <p className="font-bold text-[#7c3aed] mb-size-sm">
                   {program.tagline}
                 </p>
                 {program.thumbnailNote && (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
 const checklist = [
@@ -16,11 +17,25 @@ const checklist = [
 export default function Hero() {
   return (
     <section className="relative bg-white min-h-[85vh] flex items-center overflow-hidden grid-blueprint px-margin-mobile md:px-margin-desktop">
-      <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center py-size-xl relative z-10">
-        <Reveal className="md:col-span-7 flex flex-col items-start gap-size-md">
-          <div className="flex items-center gap-size-xs bg-surface-container-low px-size-sm py-1 rounded-full border border-outline-variant/30">
-            <span className="text-label-md font-label-md text-primary tracking-widest">
-              A PRODUCT BY ATOMCAMP ARABIA
+      {/* Switches at a custom 990px breakpoint (later than Tailwind's default md/768px), matching
+          the b2b Hero — that's about where there's enough room per column for the heading and the
+          video not to feel cramped, and it avoids both columns shrinking abruptly right at 768px. */}
+      <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 min-[990px]:grid-cols-2 gap-gutter items-center py-size-xl relative z-10">
+        {/* min-w-0 overrides the grid item's default min-width: auto (its content's intrinsic
+            min-content size) — without it, this column refuses to shrink past its longest word's
+            width and the heading overflows sideways into the video column near the breakpoint. */}
+        <Reveal className="min-w-0 flex flex-col items-start gap-size-md">
+          <div className="flex items-center bg-surface-container-low px-3 py-1 rounded-full border border-outline-variant/30">
+            <span className="flex items-center gap-2 text-[16px] font-bold text-primary tracking-widest">
+              A Product by
+              <Image
+                src="/images/atomcamp-arabia-logo.png"
+                alt="Atomcamp Arabia"
+                width={150}
+                height={50}
+                className="h-6 w-auto object-contain"
+                priority
+              />
             </span>
           </div>
           <div className="inline-flex items-center gap-size-xs bg-primary-fixed text-on-primary-fixed-variant px-size-sm py-1 rounded-lg">
@@ -79,7 +94,7 @@ export default function Hero() {
         </Reveal>
         <Reveal
           delayMs={200}
-          className="md:col-span-5 relative group mt-size-md md:mt-0"
+          className="relative group mt-size-md min-[990px]:mt-0"
         >
           {/* Product preview video, replacing the earlier decorative "AI calibrating" mock UI. */}
           <div className="relative z-20 rounded-xl overflow-hidden border border-outline-variant/30 shadow-2xl transition-transform duration-700 group-hover:scale-105">
