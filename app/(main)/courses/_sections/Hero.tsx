@@ -55,7 +55,9 @@ export default function Hero() {
         <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-size-md text-left">
           AI programs that start where you are
         </h1>
-        <p className="max-w-3xl font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left">
+        {/* No max-width constraint — this para now spans the full container width,
+            matching the "How your path adapts" card below it. */}
+        <p className="font-body-lg text-body-lg text-on-surface-variant mb-size-lg text-left">
           Take a quick placement check and inaraX builds a path around your
           level, your field, and your goal — so you&apos;re never stuck
           relearning what you already know. Choose AI for Professionals or

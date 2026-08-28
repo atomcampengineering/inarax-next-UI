@@ -11,7 +11,8 @@ export default function KeyFeatures() {
   return (
     <section className="bg-white py-size-xl px-margin-mobile md:px-margin-desktop">
       <div className="max-w-[1440px] mx-auto">
-        <Reveal className="flex flex-col md:flex-row items-center justify-between gap-size-lg mb-size-xl">
+        {/* Two-door fork heading — hidden per product request; preserved for easy re-enable. */}
+        <Reveal className="hidden flex-col md:flex-row items-center justify-between gap-size-lg mb-size-xl">
           <h2 className="font-display-lg-mobile md:font-display-lg text-headline-lg md:text-display-lg text-on-surface md:w-1/2 text-center md:text-left whitespace-nowrap md:whitespace-normal">
             The two-door fork
           </h2>
@@ -22,7 +23,8 @@ export default function KeyFeatures() {
           </p>
         </Reveal>
         <div className="grid grid-cols-1 min-[800px]:grid-cols-3 gap-gutter">
-          <Reveal className="p-size-md min-[640px]:p-size-lg min-[800px]:p-size-sm min-[1000px]:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300">
+          {/* shadow uses the same blue hue as the border so the glow blends into the outline */}
+          <Reveal className="p-size-md min-[640px]:p-size-lg min-[800px]:p-size-sm min-[1000px]:p-size-lg border border-primary/20 rounded-xl bg-white hover:shadow-[0_8px_30px_rgba(0,60,185,0.18)] hover:border-primary/40 transition-all duration-300 shadow-[0_4px_16px_rgba(0,60,185,0.10)]">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">
                 rocket_launch
@@ -59,7 +61,7 @@ export default function KeyFeatures() {
           </Reveal>
           <Reveal
             delayMs={200}
-            className="p-size-md min-[640px]:p-size-lg min-[800px]:p-size-sm min-[1000px]:p-size-lg border border-outline-variant/30 rounded-xl bg-white hover:shadow-lg transition-all duration-300"
+            className="p-size-md min-[640px]:p-size-lg min-[800px]:p-size-sm min-[1000px]:p-size-lg border border-primary/20 rounded-xl bg-white hover:shadow-[0_8px_30px_rgba(0,60,185,0.18)] hover:border-primary/40 transition-all duration-300 shadow-[0_4px_16px_rgba(0,60,185,0.10)]"
           >
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-size-md">
               <span className="material-symbols-outlined text-primary">
